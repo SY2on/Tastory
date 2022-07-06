@@ -7,7 +7,7 @@ endpg = 1000
 FinialBookDataList = []
 TitleList = []
 #BookDataDict = {'title':"", 'bookcover':"",'descript':"", 'author':""}
-key = 'ttbqus71461328001'
+key = '' #Input Key 
 print("\n\n\n\n\n\n")
 for A in range(2, 10):
     BookDataDict = {'title':"", 'bookcover':"",'descript':"", 'author':""}
