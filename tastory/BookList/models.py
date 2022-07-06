@@ -3,7 +3,8 @@ from django.db import models
 # Create your models here.
 
 class BestBookList(models.Model):
-    title = models.TextField()         
+    title = models.TextField()   
+    imglink = models.TextField()      
     author = models.TextField()    
     content = models.TextField()
     dt_created = models.DateField(auto_now=True)
