@@ -44,3 +44,9 @@ body {
     overflow-y: auto;
     /* Scrollable contents if viewport is shorter than content. */
 }
+
+.content .banner {
+    width: 300px;
+    height: 500px;
+    background-color: red;
+}
