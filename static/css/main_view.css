@@ -8,3 +8,17 @@
 .content .title {
     font-size: 25px;
 }
+
+.showbook {
+    overflow: hidden;
+    width: 100%;
+}
+
+.bookcover {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.bookcover img {
+    padding-left: 80px;
+}
