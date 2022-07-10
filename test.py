@@ -1,8 +1,4 @@
-from flask import Flask, render_template
-app = Flask(__name__)
-@app.route("/")
-def test():
-    data = [
+data = [
 	{
 		"title": "아이딕 익스플로러 iDic Explorer 1C2",
 		"bookcover": "https://image.aladin.co.kr/product/29758/77/coversum/k652838203_1.jpg",
@@ -52,7 +48,6 @@ def test():
 		"author": "특급미디어 편집부 (지은이)"
 	}
 ]
-    return render_template("test.html",data=data)
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000, debug=True)
+for a in data:
+    print(a['bookcover'], "\n")

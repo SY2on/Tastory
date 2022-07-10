@@ -1,4 +1,21 @@
 {% extends 'index.html' %}
 {% block content %}
-    <p>This is father html!!</p>
+<div class="banner"></div>
+<div class="BookOfMonth">
+    <div class="title">이달의 책</div>
+    <div class="showbook">
+        <ul>
+            {% for show in data %}
+            <li> {{show['bookcover']}} </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="ReviewOfMonth">
+    <div class="title">이달의 리뷰</div>
+    <div class="showReview"></div>
+</div>
+<div class="SuggestionLibrary">
+    <div class="showLibrary"></div>
+</div>
 {% endblock %}
