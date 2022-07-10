@@ -4,11 +4,11 @@
 <div class="BookOfMonth">
     <div class="title">이달의 책</div>
     <div class="showbook">
-        <ul>
+        <div class="bookcover">
             {% for show in data %}
-            <li> {{show['bookcover']}} </li>
+            <img src="{{show['bookcover']}}" alt="{{show['title']}}">
             {% endfor %}
-        </ul>
+        </div>
     </div>
 </div>
 <div class="ReviewOfMonth">
