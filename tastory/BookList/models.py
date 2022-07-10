@@ -4,9 +4,12 @@ from django.db import models
 
 class BestBookList(models.Model):
     title = models.TextField()   
-    imglink = models.TextField()      
-    author = models.TextField()    
-    content = models.TextField()
+    img_url = models.TextField()      
+    author = models.TextField(max_length=20)    
+    book_info = models.TextField()
+    isbn = models.TextField(max_length=20)
+    pubdate = models.DateField()
+    publisher = models.TextField(max_length=20)
     dt_created = models.DateField(auto_now=True)
     
     def __str__(self):                                   
