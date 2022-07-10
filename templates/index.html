@@ -53,22 +53,10 @@
             </div>
         </div>
     </nav>
-    <!-- <div class="content">
-        <div class="banner"></div>
-        <div class="BookOfMonth">
-            <div class="title">이달의 책</div>
-            <div class="showbook">
-                
-            </div>
-        </div>
-        <div class="ReviewOfMonth">
-            <div class="title">이달의 리뷰</div>
-            <div class="showReview"></div>
-        </div>
-        <div class="SuggestionLibrary">
-            <div class="showLibrary"></div>
-        </div>
-    </div> -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 
 </html>
