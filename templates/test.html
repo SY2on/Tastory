@@ -4,14 +4,18 @@
 <div class="BookOfMonth">
     <div class="title">이달의 책</div>
     <div class="bookcover">
-        {% for show in data %}
+        {% for show in bookdata %}
         <img src="{{show['img_url']}}" alt="{{show['title']}}">
         {% endfor %}
     </div>
 </div>
 <div class="ReviewOfMonth">
     <div class="title">이달의 리뷰</div>
-    <div class="showReview"></div>
+    <div class="showReview">
+        {% for show in review %}
+        <div class="user_review">{{show['user_name']}}/{{show['data']}}/</div>
+        {% endfor %}
+    </div>
 </div>
 <div class="SuggestionLibrary">
     <div class="showLibrary"></div>
