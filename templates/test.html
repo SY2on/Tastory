@@ -14,11 +14,13 @@
     <div class="showReview">
         {% for show in review %}
         <div class="user_review">
-            <div class="info">
-                <div class="profile"><img src="{{show['user_img_url']}}"></div>
-                <div class="name">{{show['user_name']}}</div>
+            <div class="viewport">
+                <div class="info">
+                    <div class="profile"><img src="{{show['user_img_url']}}"></div>
+                    <div class="name">{{show['user_name']}}</div>
+                </div>
+                <div class="data">{{show['data']}}</div>
             </div>
-            <div class="data">{{show['data']}}</div>
         </div>
         {% endfor %}
     </div>

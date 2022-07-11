@@ -31,6 +31,10 @@
     width: 133px;
 }
 
+.viewport {
+    padding: 10px;
+}
+
 .user_review {
     width: 350px;
     height: 150px;
@@ -43,7 +47,11 @@
     align-items: center;
 }
 
+.user_review .name {
+    padding-left: 10px;
+}
 .user_review img {
+    box-shadow: rgba(100, 100, 111, 0.151) 0 0 5px 4px ;
     width: 45px;
     height: 45px;
     border-radius: 50%;
