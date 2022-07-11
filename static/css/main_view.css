@@ -31,9 +31,23 @@
     width: 133px;
 }
 
-
 .user_review {
     width: 350px;
     height: 150px;
     border: 1px solid #000000;
+    margin-top: 10px;
+}
+
+.user_review .info {
+    display: flex;
+    align-items: center;
+}
+
+.user_review img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }

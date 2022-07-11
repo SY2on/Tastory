@@ -65,6 +65,7 @@ header > a {
 }
 
 .content {
+    z-index: -999;
     padding-top: 60px;
     margin-left: 220px;
     margin-top: 20px;
