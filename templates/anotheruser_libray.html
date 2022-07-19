@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="userinfo">
+    <div class="left_group">
+        <div class="profile_image">
+            <img src="{{userinfo[0]['profile_image']}}" alt="프로필 사진">
+        </div>
+        <div class="detail">
+            <div class="name">{{userinfo[0]['name']}}</div>
+            <div class="description">{{userinfo[0]['description']}}</div>
+        </div>
+    </div>
+    <div class="follow">
+        <i class="bi bi-person-plus-fill"></i>
+    </div>
+</div>
+<div class="libray_list"></div>
+{% endblock %}

@@ -31,14 +31,26 @@
     width: 133px;
 }
 
+.showReview {
+    width: 100%;
+    height: 250px;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+
 .viewport {
     padding: 10px;
+    white-space: normal;
 }
 
 .user_review {
     width: 350px;
     height: 150px;
     border: 1px solid #000000;
+    border-radius: 20px;
     margin-top: 10px;
 }
 
@@ -58,4 +70,26 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+.user_review .data {
+    margin-top: 10px;
+    line-height: 21px;
+    height: calc(3*21px);
+    overflow: hidden;
+    position: relative;
+}
+
+.user_review .data::after {
+    content:  '';
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 21px;
+    width: 55%;
+
+    background: linear-gradient(
+        90deg, transparent, white
+    );
 }
