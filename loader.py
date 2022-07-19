@@ -1,12 +1,13 @@
 from flask import Flask, render_template
 import json
+import os
+
 app = Flask(__name__)
-with open("testA.json") as f:
-	bookdata = json.load(f)
-with open("user_review.json") as f:
-    review = json.load(f)
-with open("userinfo.json") as f:
-    userinfo = json.load(f)
+
+for DataName in os.listdir('./data'):
+    with open("./data/"+DataName, encoding='UTF8') as f:
+        globals()[os.path.splitext(DataName)[0]] = json.load(f)
+        
 @app.route("/")
 def test():
     return render_template("test.html",bookdata=bookdata, review=review)
