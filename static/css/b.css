@@ -39,5 +39,11 @@
     margin-right: 30px;
     margin-left: 30px;
     border-top: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
+.library{
+    margin: 1%
 }

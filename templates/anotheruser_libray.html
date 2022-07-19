@@ -14,5 +14,12 @@
         <i class="bi bi-person-plus-fill"></i>
     </div>
 </div>
-<div class="libray_list"></div>
+<div class="libray_list">
+    {% for Library in LibraryData %}
+    <div class="library">
+        <div class="name">Library</div>
+        <img src="{{Library['cover_img_url']}}">
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
