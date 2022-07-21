@@ -18,7 +18,7 @@ body {
     text-align: center;
 }
 
-@media(max-width:767px) { 
+@media(max-width:600px) { 
     .leftsidebar{
         border-bottom: 1px solid grey;
     }
@@ -43,7 +43,7 @@ body {
     }
 
 }
-@media(min-width:768px) { 
+@media(min-width:601px) { 
     .leftsidebar{
         height: 100vh!important;
         border-right: 1px solid grey;
@@ -217,3 +217,22 @@ body {
     }
 }
 // --<<< AREA END >>>>--
+
+// HTML - Book_Info.html ->> AREA <<-
+.Book_Info {
+    .BookDetail {
+        background-color: red;
+        height: 300px;
+        // width: 75%;
+    }
+    .Purchase {
+        background-color: blue;
+        height: 300px;
+        // width: 25%;
+    }
+    .Review {
+        background-color: yellow;
+        height: 300px;
+        // width: 100%;
+    }
+}

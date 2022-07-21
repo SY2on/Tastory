@@ -8,7 +8,7 @@ body {
   text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   .leftsidebar {
     border-bottom: 1px solid grey;
   }
@@ -29,7 +29,7 @@ body {
     padding-left: 10px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 601px) {
   .leftsidebar {
     height: 100vh !important;
     border-right: 1px solid grey;
@@ -192,4 +192,17 @@ body {
 }
 .AnotherUserLibray_View .LibrayList .Library {
   margin: 0.4% 0.4%;
+}
+
+.Book_Info .BookDetail {
+  background-color: red;
+  height: 300px;
+}
+.Book_Info .Purchase {
+  background-color: blue;
+  height: 300px;
+}
+.Book_Info .Review {
+  background-color: yellow;
+  height: 300px;
 }/*# sourceMappingURL=style.css.map */
