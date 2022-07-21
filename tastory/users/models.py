@@ -67,6 +67,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     Username and password are required. Other fields are optional.
     """
+    user_id = models.BigAutoField(primary_key=True)
+    
     email = models.EmailField(
         max_length=254,
         unique=True
