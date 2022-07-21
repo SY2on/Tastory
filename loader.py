@@ -10,11 +10,14 @@ for DataName in os.listdir('./data'):
 
 @app.route("/")
 def test():
-    return render_template("test.html",bookdata=bookdata, review=user_review)
+    # 메인화면
+    return render_template("test.html",bookdata=bookdata, review=user_review, user_info=UserInfo) 
 
-@app.route("/1")
-def aaa():
-    return render_template("anotheruser_libray.html",userinfo=userinfo,LibraryData=OtherUserLibraryInformation)
+    # 다른사람 서재
+    #return render_template("anotheruser_libray.html",userinfo=userinfo,LibraryData=OtherUserLibraryInformation) 
+
+    # 책 정보
+    # return render_template("Book_Info.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True) 

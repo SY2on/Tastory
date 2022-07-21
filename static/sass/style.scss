@@ -1,0 +1,106 @@
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "HappyTitle";
+}
+// HTML - index.html ->> AREA <<-
+
+.logo_title {
+    text-align: center;
+}
+
+@media(max-width:767px) { 
+    .leftsidebar{
+        border-bottom: 1px solid grey;
+    }
+    .media_option {
+        max-width: none;
+    }
+
+    .user_info {
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    .ShowArea {
+        z-index: -999;
+        margin-left: 7px;
+        margin-top: 7px;
+        width: 0;
+    }
+
+    .name {
+        padding-left: 10px;
+    }
+
+}
+@media(min-width:768px) { 
+    .leftsidebar{
+        height: 100vh!important;
+        border-right: 1px solid grey;
+        position: fixed;
+    }
+
+    .media_option {
+        max-width: 200px!important;
+        min-width: 200px!important;
+    }
+
+    .user_info {
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        padding: 0 0 10px 10px;
+    }
+
+    .name {
+        padding-left: 10px;
+    }
+
+    .ShowArea {
+        z-index: -999;
+        margin-left: 200px;
+        margin-top: 7px;
+        width: 0;
+    }
+}
+
+.view {
+    padding-top: 57px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.items {
+    height: 2.5rem;
+}
+
+.first {
+    margin-top: 2.5rem;
+    
+}
+
+.test {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    border-bottom: solid 1px #000000;
+    justify-content: space-between;
+}
+
+.profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
