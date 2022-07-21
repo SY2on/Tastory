@@ -1,3 +1,12 @@
+@mixin CircleImage($Height, $Width) {
+    width: $Height;
+    height: $Width;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
 body {
     height: 100%;
     width: 100%;
@@ -27,7 +36,6 @@ body {
         z-index: -999;
         margin-left: 7px;
         margin-top: 7px;
-        width: 0;
     }
 
     .name {
@@ -64,7 +72,6 @@ body {
         z-index: -999;
         margin-left: 200px;
         margin-top: 7px;
-        width: 0;
     }
 }
 
@@ -97,10 +104,75 @@ body {
 }
 
 .profile img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    @include CircleImage(50px, 50px)
 }
+// --<<< AREA END >>>>--
+
+// HTML - Quest_View.html ->> AREA <<-
+.Quest_View {
+    .Banner {
+        width: 100%;
+        height: 100px;
+        background-color: red;
+        margin-bottom: 10px;
+    }
+
+    .Title {
+        font-size: 2rem;
+    }
+
+    .AREA_Book {
+        width: 100%;
+        height: 250px;
+        white-space: nowrap;
+        position: relative;
+        overflow-x: auto;
+        & img{
+            float: none;
+            margin: 0 0.25%;
+            display: inline-block;
+            zoom: 1;
+            height: 200px;
+            width: 133px;
+        }
+    }
+
+    .AREA_Review {
+        width: 100%;
+        height: 250px;
+        white-space: nowrap;
+        position: relative;
+        overflow-x: scroll;
+
+        .Review {
+            float: none;
+            white-space: normal;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 300px;
+            padding: 10px;
+            margin: 0 0.25%;
+            display: inline-block;
+            zoom: 1;
+        }
+
+        .UserInfo{
+            display: flex;
+            align-items: center;
+            .Name {
+                padding-left: 10px;
+                font-size: 1.25em;
+            }
+
+            & img {
+                @include CircleImage(50px, 50px)
+            }
+        }
+
+        .Article {
+            padding-top: 10px;
+        }
+    }
+}
+
+

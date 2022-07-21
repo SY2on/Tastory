@@ -11,7 +11,7 @@ for DataName in os.listdir('./data'):
 @app.route("/")
 def test():
     # 메인화면
-    return render_template("test.html",bookdata=bookdata, review=user_review, user_info=UserInfo) 
+    return render_template("Quest_View.html",BookData=bookdata, ReviewData=user_review, UserInfo=UserInfo) 
 
     # 다른사람 서재
     #return render_template("anotheruser_libray.html",userinfo=userinfo,LibraryData=OtherUserLibraryInformation) 
