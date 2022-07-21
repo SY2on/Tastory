@@ -174,5 +174,46 @@ body {
         }
     }
 }
+// --<<< AREA END >>>>--
 
+// HTML - AnotherUserLibray.html ->> AREA <<-
+.AnotherUserLibray_View{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
+    .LeftSide {
+        display: flex;
+        align-items: center;
+    }
+
+    .UserInfo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 900px;
+        margin: 50px 0px 50px 0px;
+
+        .Name, .Follow {
+            font-size: 2em;
+        }
+    }
+    .Profile {
+        padding-right: 20px;
+        & img {
+            @include CircleImage(120px, 120px)
+        }
+    }
+
+    .LibrayList {
+        border-top: 1px solid black;
+        padding-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+
+        & .Library {
+            margin: 0.4% 0.4%;
+        }
+    }
+}
+// --<<< AREA END >>>>--

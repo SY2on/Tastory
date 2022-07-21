@@ -11,10 +11,10 @@ for DataName in os.listdir('./data'):
 @app.route("/")
 def test():
     # 메인화면
-    return render_template("Quest_View.html",BookData=bookdata, ReviewData=user_review, UserInfo=UserInfo) 
+    # return render_template("Quest_View.html",BookData=bookdata, ReviewData=user_review, UserInfo=UserInfo) 
 
     # 다른사람 서재
-    #return render_template("anotheruser_libray.html",userinfo=userinfo,LibraryData=OtherUserLibraryInformation) 
+    return render_template("anotheruser_libray.html",UserInfo=UserInfo,LibraryData=OtherUserLibraryInformation) 
 
     # 책 정보
     # return render_template("Book_Info.html")

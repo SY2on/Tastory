@@ -152,4 +152,44 @@ body {
 }
 .Quest_View .AREA_Review .Article {
   padding-top: 10px;
+}
+
+.AnotherUserLibray_View {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.AnotherUserLibray_View .LeftSide {
+  display: flex;
+  align-items: center;
+}
+.AnotherUserLibray_View .UserInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 900px;
+  margin: 50px 0px 50px 0px;
+}
+.AnotherUserLibray_View .UserInfo .Name, .AnotherUserLibray_View .UserInfo .Follow {
+  font-size: 2em;
+}
+.AnotherUserLibray_View .Profile {
+  padding-right: 20px;
+}
+.AnotherUserLibray_View .Profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.AnotherUserLibray_View .LibrayList {
+  border-top: 1px solid black;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.AnotherUserLibray_View .LibrayList .Library {
+  margin: 0.4% 0.4%;
 }/*# sourceMappingURL=style.css.map */

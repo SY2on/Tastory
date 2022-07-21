@@ -1,25 +1,28 @@
 {% extends 'index.html' %}
 {% block content %}
-<div class="userinfo">
-    <div class="left_group">
-        <div class="profile_image">
-            <img src="{{userinfo[0]['profile_image']}}" alt="프로필 사진">
+<div class="AnotherUserLibray_View">
+    <div class="UserInfo">
+        <div class="LeftSide">
+            <div class="Profile">
+                <img src="{{ UserInfo[0]['profile_image'] }}">
+            </div>
+            <div>
+                <div class="Name">{{ UserInfo[0]['name'] }}</div>
+                <div class="Description">{{ UserInfo[0]['description'] }}</div>
+            </div>
         </div>
-        <div class="detail">
-            <div class="name">{{userinfo[0]['name']}}</div>
-            <div class="description">{{userinfo[0]['description']}}</div>
+        <div class="Follow">
+            <i class="bi bi-person-plus-fill"></i>
         </div>
     </div>
-    <div class="follow">
-        <i class="bi bi-person-plus-fill"></i>
-    </div>
-</div>
-<div class="libray_list">
+    <div class="LibrayList">
     {% for Library in LibraryData %}
-    <div class="library">
-        <div class="name">Library</div>
+    <div class="Library">
+        <div class="Name">{{Library['name']}}</div>
         <img src="{{Library['cover_img_url']}}">
     </div>
     {% endfor %}
+    </div>
 </div>
+
 {% endblock %}
