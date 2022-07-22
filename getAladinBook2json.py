@@ -9,7 +9,7 @@ TitleList = []
 #BookDataDict = {'title':"", 'bookcover':"",'descript':"", 'author':""}
 key = 'ttbqus71461328001' #Input Key 
 print("\n\n\n\n\n\n")
-for A in range(2, 103):
+for A in range(2, 34):
     BookDataDict = {'title':"", 'img_url':"",'book_info':"", 'author':"", 'isbn':"", 'category':"", 'pubdate':"", 'publisher':""}
     url = f"http://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey={key}&QueryType=ItemNewAll&MaxResults={A}&start={A}&SearchTarget=Book&output=xml&Version=20131101"
     res = requests.get(url)
@@ -17,7 +17,7 @@ for A in range(2, 103):
     TitleList = str(soup).split("</searchcategoryname>")[1]
     #print(TitleList)
     title = TitleList.split("<title>",1)[1].split("</title>",1)[0]
-    #print(title)
+    print(title)
     author = TitleList.split("<author>",1)[1].split("</author>",1)[0]
     #print(author)
     description = TitleList.split("<description>",1)[1].split("</description>",1)[0]
@@ -38,7 +38,7 @@ for A in range(2, 103):
     FinialBookDataList.append(BookDataDict)
     print("==========\n")
 
-print(FinialBookDataList)
+#print(FinialBookDataList)
 
 with open('./testA.json', 'w', encoding='utf-8') as make_file:
     json.dump(FinialBookDataList, make_file, indent="\t", ensure_ascii=False)
