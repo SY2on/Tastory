@@ -37,6 +37,7 @@ body {
         margin-left: 7px;
         margin-top: 7px;
         font-family: "HappyBold";
+        overflow-y: hidden;
     }
 
     .name {
@@ -74,6 +75,7 @@ body {
         margin-left: 200px;
         margin-top: 7px;
         font-family: "HappyBold";
+        overflow-y: hidden;
     }
 }
 
@@ -129,7 +131,7 @@ body {
         white-space: nowrap;
         position: relative;
         overflow-x: auto;
-        & img{
+        img{
             float: none;
             margin: 0 0.25%;
             display: inline-block;
@@ -202,7 +204,7 @@ body {
     }
     .Profile {
         padding-right: 20px;
-        & img {
+        img {
             @include CircleImage(120px, 120px)
         }
     }
@@ -233,9 +235,10 @@ body {
                 width: auto;
                 display: flex;
                 .BookCover{
-                    & img{
+                    img{
                         width: 300px;
                         height: 420px;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
                     }
                 }
                 .BookDetail {
@@ -267,18 +270,90 @@ body {
                 }
             }
         }
-        .Introduce {
-            border: 1px solid #000000;
+        .DetailBottom{
+            margin: 20px 0px 0px 0px;
+            .Introduce {
+                display: initial;
+                padding: 15px;
+                border: 1px solid #00000012;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                height: 250px;
+                overflow: auto;
+            }
         }
     }
     .Purchase {
-        background-color: blue;
-        height: 300px;
-        // width: 25%;
+        .Outside{
+            border: 1px solid #000000;
+        }
+        .Group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 40px;
+            padding: 10px;
+            .Info {
+                z-index: 9999999;
+            }
+        }
     }
     .Review {
-        background-color: yellow;
-        height: 300px;
-        // width: 100%;
+        margin: 10px 0px 0px 0px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        .Group {
+            display: flex;
+            align-items: center;
+            .Title {
+                font-size: 2em;
+            }
+        }
+        .ReviewDetail {
+            width: 300px;
+            padding: 15px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 20px;
+            margin: 0 0.5%;
+            display: inline-block;
+            .UserInfo {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                img {
+                    @include CircleImage(40px, 40px);
+                }
+            }
+            .View {
+                white-space: normal;
+                .Data {
+                    line-height: 21px;
+                    height: calc(3 * 21px);
+                    overflow: hidden;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        height: 21px;
+                        width: 65%;
+                        background: linear-gradient(
+                            90deg, transparent, white
+                        );
+                    }
+                }
+                .Status {
+                    display: flex;
+                    align-items: center;
+                    div {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
     }
 }
+// --<<< AREA END >>>>--
+
+// HTML - AnotherUserLibray.html ->> AREA <<-

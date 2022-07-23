@@ -25,6 +25,7 @@ body {
     margin-left: 7px;
     margin-top: 7px;
     font-family: "HappyBold";
+    overflow-y: hidden;
   }
   .name {
     padding-left: 10px;
@@ -56,6 +57,7 @@ body {
     margin-left: 200px;
     margin-top: 7px;
     font-family: "HappyBold";
+    overflow-y: hidden;
   }
 }
 .view {
@@ -214,6 +216,7 @@ body {
 .Book_Info .BookDetail .DetailTop .BookInfo .BookCover img {
   width: 300px;
   height: 420px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .Book_Info .BookDetail .DetailTop .BookInfo .BookDetail {
   padding: 10px 0px 0px 20px;
@@ -240,14 +243,86 @@ body {
 .Book_Info .BookDetail .DetailTop .Statics .Heart i {
   color: #ff0000;
 }
-.Book_Info .BookDetail .Introduce {
+.Book_Info .BookDetail .DetailBottom {
+  margin: 20px 0px 0px 0px;
+}
+.Book_Info .BookDetail .DetailBottom .Introduce {
+  display: initial;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.0705882353);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  height: 250px;
+  overflow: auto;
+}
+.Book_Info .Purchase .Outside {
   border: 1px solid #000000;
 }
-.Book_Info .Purchase {
-  background-color: blue;
-  height: 300px;
+.Book_Info .Purchase .Group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 10px;
+}
+.Book_Info .Purchase .Group .Info {
+  z-index: 9999999;
 }
 .Book_Info .Review {
-  background-color: yellow;
-  height: 300px;
+  margin: 10px 0px 0px 0px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.Book_Info .Review .Group {
+  display: flex;
+  align-items: center;
+}
+.Book_Info .Review .Group .Title {
+  font-size: 2em;
+}
+.Book_Info .Review .ReviewDetail {
+  width: 300px;
+  padding: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
+  margin: 0 0.5%;
+  display: inline-block;
+}
+.Book_Info .Review .ReviewDetail .UserInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.Book_Info .Review .ReviewDetail .UserInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.Book_Info .Review .ReviewDetail .View {
+  white-space: normal;
+}
+.Book_Info .Review .ReviewDetail .View .Data {
+  line-height: 21px;
+  height: 63px;
+  overflow: hidden;
+  position: relative;
+}
+.Book_Info .Review .ReviewDetail .View .Data::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 21px;
+  width: 65%;
+  background: linear-gradient(90deg, transparent, white);
+}
+.Book_Info .Review .ReviewDetail .View .Status {
+  display: flex;
+  align-items: center;
+}
+.Book_Info .Review .ReviewDetail .View .Status div {
+  margin-right: 10px;
 }/*# sourceMappingURL=style.css.map */

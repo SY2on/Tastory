@@ -29,30 +29,55 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row DetailBottom">
                 <div class="Introduce">{{ BookInfo[0]['Introduce'] }}</div>
             </div>
         </div>
         <div class="col-lg-3 Purchase">
-            {% for PurchaseDetail in BookInfo[0]['Purchase'] %}
-                <div class="Title">{{  PurchaseDetail['CompanyName'] }}</div>
-                <div class="Info">{{  PurchaseDetail['PurchaseLink'] }}</div>
-            {% endfor %}
+            <div class="Outside">
+                {% for PurchaseDetail in BookInfo[0]['Purchase'] %}
+                <div class="Group">
+                    <div class="Title">{{  PurchaseDetail['CompanyName'] }}</div>
+                    <div class="Info">
+                        <a class="btn btm-primary" href="{{ PurchaseDetail['PurchaseLink'] }}" role="button">구매하기</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12 Review">
+            <div class="Group">
+                <div class="Title">리뷰</div>
+                <div class="ReviewCount">{{ BookInfo[0]['ReviewCount'] }}개</div>
+            </div>
             {% for ReviewDetail in BookInfo[0]['Review'] %}
+            <div class="ReviewDetail">
                 <div class="UserInfo">
+                    <div class="Profile">
+                        <img src="{{ ReviewDetail['ProfileImage'] }}">
+                    </div>
                     <div class="Name">{{ ReviewDetail['name'] }}</div>
-                    <div class="Profile">{{ ReviewDetail['ProfileImage'] }}</div>
                 </div>
                 <div class="View">
                     <div class="Data">{{ ReviewDetail['Data'] }}</div>
-                    <div class="Heart">{{ ReviewDetail['Heart_Count'] }}</div>
-                    <div class="Bookmark">{{ ReviewDetail['Bookmark_Count'] }}</div>
-                    <div class="Comment">{{ ReviewDetail['Comment_Count'] }}</div>
+                    <div class="Status">
+                        <div class="Heart">
+                            <i class="bi bi-eye-fill"></i>
+                            {{ ReviewDetail['Heart_Count'] }}
+                        </div>
+                        <div class="Bookmark">
+                            <i class="bi bi-bookmark"></i>
+                            {{ ReviewDetail['Bookmark_Count'] }}
+                        </div>
+                        <div class="Comment">
+                            <i class="bi bi-chat-dots"></i>
+                            {{ ReviewDetail['Comment_Count'] }}
+                        </div>
+                    </div>
                 </div>
+            </div>
             {% endfor %}
         </div>
     </div>
