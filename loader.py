@@ -17,7 +17,8 @@ def test():
     # return render_template("anotheruser_libray.html",UserInfo=UserInfo,LibraryData=OtherUserLibraryInformation) 
 
     # 책 정보
-    return render_template("Book_Info.html", UserInfo=UserInfo)
+    return render_template("Book_Info.html", UserInfo=UserInfo, BookInfo=BookInfo)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True) 
+    

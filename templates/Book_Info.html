@@ -1,13 +1,60 @@
 {% extends 'index.html' %}
 {% block content %}
 
-<div class="Book_Info container">
+<div class="Book_Info">
     <div class="row">
-        <div class="col-lg-10 BookDetail">1</div>
-        <div class="col-lg-2 Purchase">2</div>
+        <div class="col-lg-9 BookDetail">
+            <div class="row DetailTop">
+                <div class="BookInfo">
+                    <div class="BookCover">
+                        <img src="{{ BookInfo[0]['profile_image'] }}">
+                    </div>
+                    <div class="BookDetail">
+                        <div class="Title">{{ BookInfo[0]['name'] }}</div>
+                        <div class="Author">{{ BookInfo[0]['Author'] }}</div>
+                    </div>
+                </div>
+                <div class="Statics">
+                    <div class="View">
+                        <i class="bi bi-eye-fill"></i>
+                        {{ BookInfo[0]['View_Count'] }}
+                    </div>
+                    <div class="Bookmark">
+                        <i class="bi bi-bookmark"></i>
+                        {{ BookInfo[0]['Bookmark_Count'] }}
+                    </div>
+                    <div class="Heart">
+                        <i class="bi bi-heart-fill"></i>
+                        {{ BookInfo[0]['Heart_Count'] }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="Introduce">{{ BookInfo[0]['Introduce'] }}</div>
+            </div>
+        </div>
+        <div class="col-lg-3 Purchase">
+            {% for PurchaseDetail in BookInfo[0]['Purchase'] %}
+                <div class="Title">{{  PurchaseDetail['CompanyName'] }}</div>
+                <div class="Info">{{  PurchaseDetail['PurchaseLink'] }}</div>
+            {% endfor %}
+        </div>
     </div>
     <div class="row">
-        <div class="col-lg-12 Review">3</div>
+        <div class="col-lg-12 Review">
+            {% for ReviewDetail in BookInfo[0]['Review'] %}
+                <div class="UserInfo">
+                    <div class="Name">{{ ReviewDetail['name'] }}</div>
+                    <div class="Profile">{{ ReviewDetail['ProfileImage'] }}</div>
+                </div>
+                <div class="View">
+                    <div class="Data">{{ ReviewDetail['Data'] }}</div>
+                    <div class="Heart">{{ ReviewDetail['Heart_Count'] }}</div>
+                    <div class="Bookmark">{{ ReviewDetail['Bookmark_Count'] }}</div>
+                    <div class="Comment">{{ ReviewDetail['Comment_Count'] }}</div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 
