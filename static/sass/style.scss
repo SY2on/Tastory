@@ -357,3 +357,35 @@ body {
 // --<<< AREA END >>>>--
 
 // HTML - AnotherUserLibray.html ->> AREA <<-
+.Login_Page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "HappyBold";
+    .card {
+        border-radius: 0%;
+    }
+    button {
+        background-color: #000000;
+        color: #ffffff;
+        transition: background-color 0.3s ease;
+        &:hover{
+            background-color: #3e3e3e;
+            color: #ffffff;
+        }
+    }
+    .DownMenu {
+        display: flex;
+        justify-content: space-between;
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            p {
+                margin: 0px;
+            }
+        }
+    }
+}

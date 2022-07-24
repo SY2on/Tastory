@@ -325,4 +325,36 @@ body {
 }
 .Book_Info .Review .ReviewDetail .View .Status div {
   margin-right: 10px;
+}
+
+.Login_Page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "HappyBold";
+}
+.Login_Page .card {
+  border-radius: 0%;
+}
+.Login_Page button {
+  background-color: #000000;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+.Login_Page button:hover {
+  background-color: #3e3e3e;
+  color: #ffffff;
+}
+.Login_Page .DownMenu {
+  display: flex;
+  justify-content: space-between;
+}
+.Login_Page .DownMenu div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.Login_Page .DownMenu div p {
+  margin: 0px;
 }/*# sourceMappingURL=style.css.map */
