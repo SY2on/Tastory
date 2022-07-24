@@ -19,8 +19,11 @@ def test():
     # 책 정보
     #return render_template("Book_Info.html", UserInfo=UserInfo, BookInfo=BookInfo)
 
-    #로그인
-    return render_template("Login.html")
+    # 로그인
+    #return render_template("Login.html")
+
+    # 다른사람 리뷰 화면
+    return render_template("AnotherUser_Review.html", UserInfo=UserInfo)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True) 
