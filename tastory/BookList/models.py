@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class BestBookList(models.Model):
+class Book(models.Model):
     title = models.TextField()   
     img_url = models.TextField()      
     author = models.TextField(max_length=20)    
