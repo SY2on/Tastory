@@ -93,16 +93,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     )
 
-    introduction = models.CharField(
-        max_length=100,
-        help_text=("100자 이하의 자기소개. 생략 가능합니다."),
-        blank=True,
-    )
-    profile_img = models.ImageField(
-        default='default.jpg',
-        upload_to='profile_pics',
-        null=True,
-    )
     is_superuser = models.BooleanField(
         default=False,
         help_text=(
@@ -149,4 +139,17 @@ class User(AbstractBaseUser, PermissionsMixin):
         # Simplest possible answer: All superusers are staff
         return self.is_superuser
 
+class Profile(models.Model):
 
+    user_id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+
+    introduction = models.CharField(
+        max_length=100,
+        help_text=("100자 이하의 자기소개. 생략 가능합니다."),
+        blank=True,
+    )
+    profile_img = models.ImageField(
+        default='default.jpg',
+        upload_to='profile_pics',
+        null=True,
+    )

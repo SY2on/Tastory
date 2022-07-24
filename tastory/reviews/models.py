@@ -32,7 +32,7 @@ class Review(models.Model):
         verbose_name = "review"
         verbose_name_plural = "reviews"
 
-class Review_img(models.Model):
+class ReviewImg(models.Model):
     
     STAT_CHOICE = (
       ('ACTIVE', 'Active'),
@@ -60,7 +60,7 @@ class Review_img(models.Model):
       verbose_name="reveiw_img"
       verbose_name_plural = "review_imgs"
 
-class User_review_like(models.Model):
+class UserReviewLike(models.Model):
 
     STAT_CHOICE = (
       ('ACTIVE', 'Active'),
@@ -79,7 +79,7 @@ class User_review_like(models.Model):
         verbose_name = "user_review_like"
         verbose_name_plural = "user_review_likes"
 
-class User_review_scrap(models.Model):
+class UserReviewScrap(models.Model):
     STAT_CHOICE = (
       ('ACTIVE', 'Active'),
       ('DELETED', 'Deleted')
