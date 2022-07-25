@@ -29,8 +29,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row DetailBottom">
-                <div class="Introduce">{{ BookInfo[0]['Introduce'] }}</div>
+            <div class="row DetailBottom ">
+                <div class="Introduce ">{{ BookInfo[0]['Introduce'] }}</div>
             </div>
         </div>
         <div class="col-lg-3 Purchase">
@@ -39,7 +39,7 @@
                 <div class="Group">
                     <div class="Title">{{  PurchaseDetail['CompanyName'] }}</div>
                     <div class="Info">
-                        <a class="btn btm-primary" href="{{ PurchaseDetail['PurchaseLink'] }}" role="button">구매하기</a>
+                        <a class="btn btn-primary" href="{{ PurchaseDetail['PurchaseLink'] }}" role="button">구매하기</a>
                     </div>
                 </div>
                 {% endfor %}

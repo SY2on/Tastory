@@ -1,31 +1,54 @@
 {% extends 'index.html' %}
 {% block content %}
 <div class="AnotherUser_Review">
-    <div class="container">
-        <div class="row">
+        <div class="row First">
             <div class="BookInfo">
-                <div class="Cover"></div>
-                <div class="Name"></div>
-                <div class="Author"></div>
-                <div class="OnelineReview"></div>
+                <div class="Cover">
+                    <img src="{{ Datas[0]['ProfileImage'] }}">
+                </div>
+                <div class="InfoText">
+                    <div class="Info">
+                        <div class="Name">{{ Datas[0]['Name'] }}</div>
+                        <div class="Author">{{ Datas[0]['Author'] }}</div>
+                    </div>
+                    <div class="Review">
+                        <div class="Author">{{ Datas[0]['ReviewerName'] }}님의 한줄평</div>
+                        <div class="Oneline">❝ {{ Datas[0]['OnelineReview'] }} ❞</div>
+                    </div>
+                </div>
             </div>
-            <div class="Status">
+            <div class="Stats">
                 <div class="Count">
-                    <div class="Heart"></div>
-                    <div class="View"></div>
-                    <div class="Bookmark"></div>
-                </div>
-                <div class="Action">
-                    <button>Heart Button</button>
-                    <button>Bookmark Button</button>
+                    <div class="Heart">
+                        <i class="bi bi-heart-fill"></i>
+                        {{ Datas[0]['Stats'][0]['Heart'] }}
+                    </div>
+                    <div class="View">
+                        <i class="bi bi-eye-fill"></i>
+                        {{ Datas[0]['Stats'][0]['View'] }}
+                    </div>
+                    <div class="Bookmark">
+                        <i class="bi bi-bookmark"></i>
+                        {{ Datas[0]['Stats'][0]['Bookmark'] }}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="Review"></div>
+        <div class="row Second">
+            <div class="Review">{{ Datas[0]['Review'] }}</div>
         </div>
-        <div class="row">
-            <div class="Comment"></div>
+        <div class="row Third">
+            <div class="Comments">
+                {% for Comment in Datas[0]['Comments'] %}
+                    {% if Comment['DownComment'] == true %}
+                        {% if Comment['CommentID'] == Datas[0]['Comments'][loop.index0-1]['CommentID']%}
+                            <div class="test2">상위 대댓글 영역 생성.</div>
+                        {% endif %}
+                    {% else %}
+                        <div class="test1">새로운 댓글 영역 생성.</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
