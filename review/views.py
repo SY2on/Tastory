@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-
 from .models import Review 
 from .forms import ReviewForm
 
@@ -30,8 +29,3 @@ def edit(request, Review_id) :
     else :
         form = ReviewForm()
         return render(request, 'review_edit.html', {'form':form} )
-
-
-
-
-# Create your views here.
