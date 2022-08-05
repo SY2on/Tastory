@@ -6,12 +6,12 @@ from django.db import models
 class Book(models.Model):
     title = models.TextField()
     img_url = models.TextField()
-    author = models.TextField(max_length=20)
+    author = models.TextField()
     book_info = models.TextField()
-    isbn = models.TextField(max_length=20)
+    isbn = models.TextField(unique=True)
     pubdate = models.DateField()
-    publisher = models.TextField(max_length=20)
-    #dt_created = models.DateField(auto_now=True)
+    publisher = models.TextField()
+    category = models.TextField()
 
     def __str__(self):
         return self.title
