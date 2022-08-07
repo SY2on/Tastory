@@ -14,5 +14,9 @@ class SignupForm(forms.ModelForm):
         return user
 
 
-class ProfileEditForm(forms.Form):
-    nickname = forms.CharField
+class ProfileEditForm(forms.ModelForm):
+    nickname = forms.CharField(max_length=15, label='닉네임')
+
+    class Meta:
+        model = Profile
+        fields = ['introduction', 'profile_img']
