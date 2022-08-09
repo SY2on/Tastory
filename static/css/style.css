@@ -1,0 +1,602 @@
+@charset "UTF-8";
+body {
+  display: flex;
+  font-family: "HappyTitle";
+}
+
+.logo_title {
+  text-align: center;
+}
+
+.reset-this {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-duration: 0;
+          animation-duration: 0;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-name: none;
+          animation-name: none;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  background: 0;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: transparent;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-position-x: 0;
+  background-position-y: 0;
+  background-repeat: repeat;
+  background-size: auto auto;
+  border: 0;
+  border-style: none;
+  border-width: medium;
+  border-color: inherit;
+  border-bottom: 0;
+  border-bottom-color: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-collapse: separate;
+  -o-border-image: none;
+     border-image: none;
+  border-left: 0;
+  border-left-color: inherit;
+  border-left-style: none;
+  border-left-width: medium;
+  border-radius: 0;
+  border-right: 0;
+  border-right-color: inherit;
+  border-right-style: none;
+  border-right-width: medium;
+  border-spacing: 0;
+  border-top: 0;
+  border-top-color: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-style: none;
+  border-top-width: medium;
+  bottom: auto;
+  box-shadow: none;
+  box-sizing: content-box;
+  caption-side: top;
+  clear: none;
+  clip: auto;
+  color: inherit;
+  -moz-columns: auto;
+       columns: auto;
+  -moz-column-count: auto;
+       column-count: auto;
+  -moz-column-fill: balance;
+       column-fill: balance;
+  -moz-column-gap: normal;
+       column-gap: normal;
+  -moz-column-rule: medium none currentColor;
+       column-rule: medium none currentColor;
+  -moz-column-rule-color: currentColor;
+       column-rule-color: currentColor;
+  -moz-column-rule-style: none;
+       column-rule-style: none;
+  -moz-column-rule-width: none;
+       column-rule-width: none;
+  -moz-column-span: 1;
+       column-span: 1;
+  -moz-column-width: auto;
+       column-width: auto;
+  content: normal;
+  counter-increment: none;
+  counter-reset: none;
+  cursor: auto;
+  direction: ltr;
+  display: inline;
+  empty-cells: show;
+  float: none;
+  font: normal;
+  font-family: inherit;
+  font-size: medium;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: auto;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
+  left: auto;
+  letter-spacing: normal;
+  line-height: normal;
+  list-style: none;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: disc;
+  margin: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  opacity: 1;
+  orphans: 0;
+  outline: 0;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: medium;
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  page-break-after: auto;
+  page-break-before: auto;
+  page-break-inside: auto;
+  perspective: none;
+  perspective-origin: 50% 50%;
+  position: static;
+  /* May need to alter quotes for different locales (e.g fr) */
+  quotes: "“" "”" "‘" "’";
+  right: auto;
+  -moz-tab-size: 8;
+    -o-tab-size: 8;
+       tab-size: 8;
+  table-layout: auto;
+  text-align: inherit;
+  -moz-text-align-last: auto;
+       text-align-last: auto;
+  text-decoration: none;
+  -webkit-text-decoration-color: inherit;
+          text-decoration-color: inherit;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  top: auto;
+  transform: none;
+  transform-style: flat;
+  transition: none;
+  transition-delay: 0s;
+  transition-duration: 0s;
+  transition-property: none;
+  transition-timing-function: ease;
+  unicode-bidi: normal;
+  vertical-align: baseline;
+  visibility: visible;
+  white-space: normal;
+  widows: 0;
+  width: auto;
+  word-spacing: normal;
+  z-index: auto;
+  /* basic modern patch */
+  all: initial;
+  all: unset;
+}
+
+@media (max-width: 600px) {
+  .leftsidebar {
+    border-bottom: 1px solid grey;
+  }
+  .media_option {
+    max-width: none;
+  }
+  .user_info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .ShowArea {
+    z-index: -999;
+    margin-left: 7px;
+    margin-top: 7px;
+    font-family: "HappyBold";
+    overflow-y: hidden;
+  }
+  .name {
+    padding-left: 10px;
+  }
+}
+@media (min-width: 601px) {
+  .leftsidebar {
+    height: 100vh !important;
+    border-right: 1px solid grey;
+    position: fixed;
+  }
+  .media_option {
+    max-width: 200px !important;
+    min-width: 200px !important;
+  }
+  .user_info {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px 10px;
+  }
+  .name {
+    padding-left: 10px;
+  }
+  .ShowArea {
+    z-index: -999;
+    margin-left: 196px;
+    margin-top: 7px;
+    font-family: "HappyBold";
+    overflow-y: hidden;
+  }
+}
+.view {
+  padding-top: 57px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.items {
+  height: 2.5rem;
+}
+
+.first {
+  margin-top: 2.5rem;
+}
+
+.test {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  border-bottom: solid 1px #000000;
+  justify-content: space-between;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.Quest_View .Banner {
+  width: 100%;
+  height: 400px;
+  background-color: gray;
+  margin-bottom: 10px;
+}
+.Quest_View .Title {
+  font-size: 2rem;
+}
+.Quest_View .AREA_Book {
+  width: 100%;
+  height: 250px;
+  white-space: nowrap;
+  position: relative;
+  overflow-x: auto;
+}
+.Quest_View .AREA_Book img {
+  float: none;
+  margin: 0 0.25%;
+  display: inline-block;
+  zoom: 1;
+  height: 200px;
+  width: 133px;
+}
+.Quest_View .AREA_Review {
+  width: 100%;
+  height: 250px;
+  white-space: nowrap;
+  position: relative;
+  overflow-x: scroll;
+}
+.Quest_View .AREA_Review .Review {
+  float: none;
+  white-space: normal;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 300px;
+  padding: 10px;
+  margin: 0 0.25%;
+  display: inline-block;
+  zoom: 1;
+}
+.Quest_View .AREA_Review .UserInfo {
+  display: flex;
+  align-items: center;
+}
+.Quest_View .AREA_Review .UserInfo .Name {
+  padding-left: 10px;
+  font-size: 1.25em;
+}
+.Quest_View .AREA_Review .UserInfo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.Quest_View .AREA_Review .Article {
+  padding-top: 10px;
+}
+
+.AnotherUserLibray_View {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.AnotherUserLibray_View .LeftSide {
+  display: flex;
+  align-items: center;
+}
+.AnotherUserLibray_View .UserInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 900px;
+  margin: 50px 0px 50px 0px;
+}
+.AnotherUserLibray_View .UserInfo .Name, .AnotherUserLibray_View .UserInfo .Follow {
+  font-size: 2em;
+}
+.AnotherUserLibray_View .Profile {
+  padding-right: 20px;
+}
+.AnotherUserLibray_View .Profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.AnotherUserLibray_View .LibrayList {
+  border-top: 1px solid black;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.AnotherUserLibray_View .LibrayList .Library {
+  margin: 0.4% 0.4%;
+}
+
+.Book_Info {
+  margin: 10px;
+}
+.Book_Info .BookDetail {
+  display: flex;
+  flex-direction: column;
+}
+.Book_Info .BookDetail .DetailTop {
+  display: flex;
+  justify-content: space-between;
+}
+.Book_Info .BookDetail .DetailTop .BookInfo {
+  width: auto;
+  display: flex;
+}
+.Book_Info .BookDetail .DetailTop .BookInfo .BookCover img {
+  width: 300px;
+  height: 420px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.Book_Info .BookDetail .DetailTop .BookInfo .BookDetail {
+  padding: 10px 0px 0px 20px;
+}
+.Book_Info .BookDetail .DetailTop .BookInfo .BookDetail .Title {
+  font-size: 2.3vw;
+}
+.Book_Info .BookDetail .DetailTop .BookInfo .BookDetail .Author {
+  font-size: 1.7vw;
+}
+.Book_Info .BookDetail .DetailTop .Statics {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: auto;
+}
+.Book_Info .BookDetail .DetailTop .Statics i {
+  padding-right: 5px;
+}
+.Book_Info .BookDetail .DetailTop .Statics div {
+  display: flex;
+  align-items: center;
+}
+.Book_Info .BookDetail .DetailTop .Statics .Heart i {
+  color: #ff0000;
+}
+.Book_Info .BookDetail .DetailBottom {
+  margin: 20px 0px 0px 0px;
+}
+.Book_Info .BookDetail .DetailBottom .Introduce {
+  display: unset !important;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.0705882353);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  height: 250px;
+  overflow: auto;
+}
+.Book_Info .Purchase .Outside {
+  border: 1px solid #000000;
+}
+.Book_Info .Purchase .Group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 10px;
+}
+.Book_Info .Purchase .Group .Info {
+  z-index: 9999999;
+}
+.Book_Info .Review {
+  margin: 10px 0px 0px 0px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.Book_Info .Review .Group {
+  display: flex;
+  align-items: center;
+}
+.Book_Info .Review .Group .Title {
+  font-size: 2em;
+}
+.Book_Info .Review .ReviewDetail {
+  width: 300px;
+  padding: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
+  margin: 0 0.5%;
+  display: inline-block;
+}
+.Book_Info .Review .ReviewDetail .UserInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.Book_Info .Review .ReviewDetail .UserInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.Book_Info .Review .ReviewDetail .View {
+  white-space: normal;
+}
+.Book_Info .Review .ReviewDetail .View .Data {
+  line-height: 21px;
+  height: 63px;
+  overflow: hidden;
+  position: relative;
+}
+.Book_Info .Review .ReviewDetail .View .Data::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 21px;
+  width: 65%;
+  background: linear-gradient(90deg, transparent, white);
+}
+.Book_Info .Review .ReviewDetail .View .Status {
+  display: flex;
+  align-items: center;
+}
+.Book_Info .Review .ReviewDetail .View .Status div {
+  margin-right: 10px;
+}
+
+.Login_Page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "HappyBold";
+}
+.Login_Page .card {
+  border-radius: 0%;
+}
+.Login_Page button {
+  background-color: #000000;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+.Login_Page button:hover {
+  background-color: #3e3e3e;
+  color: #ffffff;
+}
+.Login_Page .DownMenu {
+  display: flex;
+  justify-content: space-between;
+}
+.Login_Page .DownMenu div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.Login_Page .DownMenu div p {
+  margin: 0px;
+}
+
+.AnotherUser_Review {
+  padding: 30px;
+}
+.AnotherUser_Review .First {
+  display: flex;
+  justify-content: space-between;
+}
+.AnotherUser_Review .First .BookInfo {
+  display: flex;
+  width: auto;
+}
+.AnotherUser_Review .First .BookInfo img {
+  width: 225px;
+}
+.AnotherUser_Review .First .BookInfo .InfoText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.AnotherUser_Review .First .BookInfo .InfoText .Info .Name {
+  font-size: 3em;
+}
+.AnotherUser_Review .First .BookInfo .InfoText .Info .Author {
+  font-size: 1.5em;
+}
+.AnotherUser_Review .First .BookInfo .InfoText .Review .Author {
+  font-size: 1.5em;
+}
+.AnotherUser_Review .First .BookInfo .InfoText .Review .Oneline {
+  font-size: 2em;
+}
+.AnotherUser_Review .First .Stats {
+  width: auto;
+}
+.AnotherUser_Review .Second {
+  padding-top: 10px;
+}
+.AnotherUser_Review .Second .Review {
+  border: 1px solid #000000;
+  padding: 10px;
+  height: 250px;
+  overflow-y: auto;
+}
+.AnotherUser_Review .Third {
+  padding: 10px 0px 10px 0px;
+}
+.AnotherUser_Review .Third .Comments {
+  background-color: red;
+}
+.AnotherUser_Review .Third .Comments .test1 {
+  border: 1px solid black;
+  background-color: aqua;
+}
+.AnotherUser_Review .Third .Comments .test2 {
+  border: 1px solid black;
+  background-color: antiquewhite;
+}/*# sourceMappingURL=style.css.map */
