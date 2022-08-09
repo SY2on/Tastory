@@ -1,24 +1,30 @@
-from urllib import request
-from django.shortcuts import get_object_or_404, redirect, render
-from django.http import JsonResponse
-from .models import Book
-import json
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Review 
+from .forms import ReviewForm
+
+def write(request) :
+    if request.method == 'POST' :
+        form = ReviewForm(request.POST)
+        new_review = form.save()
+        return redirect('page-read', review_id = new_review.id)
+    else :
+        form = ReviewForm()
+        return render(request, 'review_write.html', {'form':form} )
 
 
-def all(request):
-    object_list = Book.objects.all()
-    return render(request, 'X.html', {'object_list': object_list})
+def detail(request, review_id):
+    review_detail = get_object_or_404(Review, id = review_id)         
+    return render(request, 'review_detail.html', {'review_detail': review_detail})
 
 
-def read(request, book_id):
-    with open('./review/testA.json', 'r', encoding='UTF8') as f:
-        json_data = json.load(f)
-
-    for data in json_data:
-        if data["isbn"] == str(book_id):
-            sendData = data
-            break
-    print(sendData)
-    return render(request, {'object_detail': sendData})
-    # return JsonResponse(sendData)
-    # return HttpResponse(json.dumps(data), content_type = "application/json")
+def edit(request, review_id) :
+    review = Review.objects.get(id=review_id)
+    if request.method == 'POST' :
+        review.title = request.POST['title']
+        review.content = request.POST['content']
+        review.save()
+        return redirect('review-detail', review_id = review_id)
+    
+    else :
+        form = ReviewForm(instance=review)
+        return render(request, 'review_edit.html', {'form':form} )
