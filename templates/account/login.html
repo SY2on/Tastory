@@ -1,0 +1,54 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/load_fonts.css' %}" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-sm-12 col-md-2 col-lg-3 mx-auto"></div>
+      <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+        <div class="card border-0 shadow my-5">
+          <div class="card-body p-4 p-sm-5">
+            <p class="card-title text-center mb-5 fw-light fs-1">테이스토리</p>
+            <form method="post">
+              {% csrf_token %}
+              <div class="text-start">
+                  {% bootstrap_form form %}
+              </div>
+              {% buttons %}
+              <div class="form-group d-grid gap-2">
+                <button class="btn btn-dark" type="submit">로그인</button>
+              </div>
+              {% endbuttons%}
+            </form>
+            <hr class="my-4">
+            <div class="DownMenu">
+              <div class="d-flex justify-content-center">
+                <p>아직 가입하지 않으셨나요?</p>
+                &nbsp;
+                <a href="{% url 'account_signup' %}" class="text-decoration-none" style="color: #000000;">회원가입 ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-2 col-lg-3 mx-auto"></div>
+    </div>
+  </div>
+</body>
+
+</html>
