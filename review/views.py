@@ -22,3 +22,4 @@ def read(request, book_id):
     return render(request, {'object_detail': sendData})
     # return JsonResponse(sendData)
     # return HttpResponse(json.dumps(data), content_type = "application/json")
+    # Pull Request
