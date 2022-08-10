@@ -2,6 +2,10 @@
 {% load bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -27,20 +31,20 @@
             <form method="post">
               {% csrf_token %}
               <div class="text-start">
-                  {% bootstrap_form form %}
+                {% bootstrap_form form %}
               </div>
               {% buttons %}
               <div class="form-group d-grid gap-2">
-                <button class="btn btn-dark" type="submit">로그인</button>
+                <button class="btn btn-dark" type="submit">가입하기</button>
               </div>
               {% endbuttons%}
             </form>
             <hr class="my-4">
             <div class="DownMenu">
-              <div class="d-flex justify-content-center">
-                <p>아직 가입하지 않으셨나요?</p>
+              <div class="LeftGroup d-flex justify-content-center">
+                <p>계정이 있으신가요?</p>
                 &nbsp;
-                <a href="{% url 'account_signup' %}" class="text-decoration-none" style="color: #000000;">회원가입 ></a>
+                <a href="{% url 'account_login' %}" class="text-decoration-none" style="color: #000000;">로그인 ></a>
               </div>
             </div>
           </div>

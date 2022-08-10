@@ -1,0 +1,49 @@
+.userinfo {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left_group {
+    display: flex;
+    align-items: center;
+}
+
+.detail {
+    padding-left: 40px;
+}
+
+.userinfo img{
+    box-shadow: rgba(100, 100, 111, 0.151) 0 0 5px 4px ;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.userinfo .name {
+    font-size: 30px;
+}
+
+.follow {
+    font-size: 30px;
+}
+
+.libray_list {
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    border-top: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.library{
+    margin: 1%
+}

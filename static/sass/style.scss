@@ -1,0 +1,632 @@
+@mixin CircleImage($Height, $Width) {
+    width: $Height;
+    height: $Width;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+body {
+    display: flex;
+    font-family: "HappyTitle";
+}
+// HTML - index.html ->> AREA <<-
+
+.logo_title {
+    text-align: center;
+}
+
+.reset-this {
+    animation : none;
+    animation-delay : 0;
+    animation-direction : normal;
+    animation-duration : 0;
+    animation-fill-mode : none;
+    animation-iteration-count : 1;
+    animation-name : none;
+    animation-play-state : running;
+    animation-timing-function : ease;
+    backface-visibility : visible;
+    background : 0;
+    background-attachment : scroll;
+    background-clip : border-box;
+    background-color : transparent;
+    background-image : none;
+    background-origin : padding-box;
+    background-position : 0 0;
+    background-position-x : 0;
+    background-position-y : 0;
+    background-repeat : repeat;
+    background-size : auto auto;
+    border : 0;
+    border-style : none;
+    border-width : medium;
+    border-color : inherit;
+    border-bottom : 0;
+    border-bottom-color : inherit;
+    border-bottom-left-radius : 0;
+    border-bottom-right-radius : 0;
+    border-bottom-style : none;
+    border-bottom-width : medium;
+    border-collapse : separate;
+    border-image : none;
+    border-left : 0;
+    border-left-color : inherit;
+    border-left-style : none;
+    border-left-width : medium;
+    border-radius : 0;
+    border-right : 0;
+    border-right-color : inherit;
+    border-right-style : none;
+    border-right-width : medium;
+    border-spacing : 0;
+    border-top : 0;
+    border-top-color : inherit;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+    border-top-style : none;
+    border-top-width : medium;
+    bottom : auto;
+    box-shadow : none;
+    box-sizing : content-box;
+    caption-side : top;
+    clear : none;
+    clip : auto;
+    color : inherit;
+    columns : auto;
+    column-count : auto;
+    column-fill : balance;
+    column-gap : normal;
+    column-rule : medium none currentColor;
+    column-rule-color : currentColor;
+    column-rule-style : none;
+    column-rule-width : none;
+    column-span : 1;
+    column-width : auto;
+    content : normal;
+    counter-increment : none;
+    counter-reset : none;
+    cursor : auto;
+    direction : ltr;
+    display : inline;
+    empty-cells : show;
+    float : none;
+    font : normal;
+    font-family : inherit;
+    font-size : medium;
+    font-style : normal;
+    font-variant : normal;
+    font-weight : normal;
+    height : auto;
+    hyphens : none;
+    left : auto;
+    letter-spacing : normal;
+    line-height : normal;
+    list-style : none;
+    list-style-image : none;
+    list-style-position : outside;
+    list-style-type : disc;
+    margin : 0;
+    margin-bottom : 0;
+    margin-left : 0;
+    margin-right : 0;
+    margin-top : 0;
+    max-height : none;
+    max-width : none;
+    min-height : 0;
+    min-width : 0;
+    opacity : 1;
+    orphans : 0;
+    outline : 0;
+    outline-color : invert;
+    outline-style : none;
+    outline-width : medium;
+    overflow : visible;
+    overflow-x : visible;
+    overflow-y : visible;
+    padding : 0;
+    padding-bottom : 0;
+    padding-left : 0;
+    padding-right : 0;
+    padding-top : 0;
+    page-break-after : auto;
+    page-break-before : auto;
+    page-break-inside : auto;
+    perspective : none;
+    perspective-origin : 50% 50%;
+    position : static;
+    /* May need to alter quotes for different locales (e.g fr) */
+    quotes : '\201C' '\201D' '\2018' '\2019';
+    right : auto;
+    tab-size : 8;
+    table-layout : auto;
+    text-align : inherit;
+    text-align-last : auto;
+    text-decoration : none;
+    text-decoration-color : inherit;
+    text-decoration-line : none;
+    text-decoration-style : solid;
+    text-indent : 0;
+    text-shadow : none;
+    text-transform : none;
+    top : auto;
+    transform : none;
+    transform-style : flat;
+    transition : none;
+    transition-delay : 0s;
+    transition-duration : 0s;
+    transition-property : none;
+    transition-timing-function : ease;
+    unicode-bidi : normal;
+    vertical-align : baseline;
+    visibility : visible;
+    white-space : normal;
+    widows : 0;
+    width : auto;
+    word-spacing : normal;
+    z-index : auto;
+    /* basic modern patch */
+    all: initial;
+    all: unset;
+}
+
+@media(max-width:600px) { 
+    .leftsidebar{
+        border-bottom: 1px solid grey;
+    }
+    .media_option {
+        max-width: none;
+    }
+
+    .user_info {
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    .ShowArea {
+        z-index: -999;
+        margin-left: 7px;
+        margin-top: 7px;
+        font-family: "HappyBold";
+        overflow-y: hidden;
+    }
+
+    .name {
+        padding-left: 10px;
+    }
+
+}
+@media(min-width:601px) { 
+    .leftsidebar{
+        height: 100vh!important;
+        border-right: 1px solid grey;
+        position: fixed;
+    }
+
+    .media_option {
+        max-width: 200px!important;
+        min-width: 200px!important;
+    }
+
+    .user_info {
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        padding: 0 0 10px 10px;
+    }
+
+    .name {
+        padding-left: 10px;
+    }
+
+    .ShowArea {
+        z-index: -999;
+        margin-left: 196px;
+        margin-top: 7px;
+        font-family: "HappyBold";
+        overflow-y: hidden;
+    }
+}
+
+.view {
+    padding-top: 57px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.items {
+    height: 2.5rem;
+}
+
+.first {
+    margin-top: 2.5rem;
+    
+}
+
+.test {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    border-bottom: solid 1px #000000;
+    justify-content: space-between;
+}
+
+.profile img{
+    @include CircleImage(50px, 50px)
+}
+// --<<< AREA END >>>>--
+
+// HTML - Quest_View.html ->> AREA <<-
+.Quest_View {
+    .Banner {
+        width: 100%;
+        height: 400px;
+        background-color: gray;
+        margin-bottom: 10px;
+    }
+
+    .Title {
+        font-size: 2rem;
+    }
+
+    .AREA_Book {
+        width: 100%;
+        height: 250px;
+        white-space: nowrap;
+        position: relative;
+        overflow-x: auto;
+        img{
+            float: none;
+            margin: 0 0.25%;
+            display: inline-block;
+            zoom: 1;
+            height: 200px;
+            width: 133px;
+        }
+    }
+
+    .AREA_Review {
+        width: 100%;
+        height: 250px;
+        white-space: nowrap;
+        position: relative;
+        overflow-x: scroll;
+
+        .Review {
+            float: none;
+            white-space: normal;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 300px;
+            padding: 10px;
+            margin: 0 0.25%;
+            display: inline-block;
+            zoom: 1;
+        }
+
+        .UserInfo{
+            display: flex;
+            align-items: center;
+            .Name {
+                padding-left: 10px;
+                font-size: 1.25em;
+            }
+
+            & img {
+                @include CircleImage(50px, 50px)
+            }
+        }
+
+        .Article {
+            padding-top: 10px;
+        }
+    }
+}
+// --<<< AREA END >>>>--
+
+// HTML - AnotherUserLibray.html ->> AREA <<-
+.AnotherUserLibray_View{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .LeftSide {
+        display: flex;
+        align-items: center;
+    }
+
+    .UserInfo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 900px;
+        margin: 50px 0px 50px 0px;
+
+        .Name, .Follow {
+            font-size: 2em;
+        }
+    }
+    .Profile {
+        padding-right: 20px;
+        img {
+            @include CircleImage(120px, 120px)
+        }
+    }
+
+    .LibrayList {
+        border-top: 1px solid black;
+        padding-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+
+        & .Library {
+            margin: 0.4% 0.4%;
+        }
+    }
+}
+// --<<< AREA END >>>>--
+
+// HTML - Book_Info.html ->> AREA <<-   
+.Book_Info {
+    margin: 10px;
+    .BookDetail {
+        display: flex;
+        flex-direction: column;
+        .DetailTop{
+            display: flex;
+            justify-content: space-between;
+            .BookInfo{
+                width: auto;
+                display: flex;
+                .BookCover{
+                    img{
+                        width: 300px;
+                        height: 420px;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                    }
+                }
+                .BookDetail {
+                    padding: 10px 0px 0px 20px;
+                    .Title {
+                        font-size: 2.3vw;
+                    }
+                    .Author {
+                        font-size: 1.7vw;
+                    }
+                }
+            }
+            .Statics {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                width: auto;
+                i {
+                    padding-right: 5px;
+                }
+                div {
+                    display: flex;
+                    align-items: center;
+                }
+                .Heart {
+                    i {
+                        color: #ff0000;
+                    }
+                }
+            }
+        }
+        .DetailBottom{
+
+
+            margin: 20px 0px 0px 0px;
+
+            .Introduce {
+                display: unset!important;
+                padding: 15px;
+                border: 1px solid #00000012;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                height: 250px;
+                overflow: auto;
+            }
+        }
+    }
+    .Purchase {
+        .Outside{
+            border: 1px solid #000000;
+        }
+        .Group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 40px;
+            padding: 10px;
+            .Info {
+                z-index: 9999999;
+            }
+        }
+    }
+    .Review {
+        margin: 10px 0px 0px 0px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        .Group {
+            display: flex;
+            align-items: center;
+            .Title {
+                font-size: 2em;
+            }
+        }
+        .ReviewDetail {
+            width: 300px;
+            padding: 15px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 20px;
+            margin: 0 0.5%;
+            display: inline-block;
+            .UserInfo {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                img {
+                    @include CircleImage(40px, 40px);
+                }
+            }
+            .View {
+                white-space: normal;
+                .Data {
+                    line-height: 21px;
+                    height: calc(3 * 21px);
+                    overflow: hidden;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        height: 21px;
+                        width: 65%;
+                        background: linear-gradient(
+                            90deg, transparent, white
+                        );
+                    }
+                }
+                .Status {
+                    display: flex;
+                    align-items: center;
+                    div {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+// --<<< AREA END >>>>--
+
+// HTML - Login.html ->> AREA <<-
+.Login_Page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "HappyBold";
+    .card {
+        border-radius: 0%;
+    }
+    button {
+        background-color: #000000;
+        color: #ffffff;
+        transition: background-color 0.3s ease;
+        &:hover{
+            background-color: #3e3e3e;
+            color: #ffffff;
+        }
+    }
+    .DownMenu {
+        display: flex;
+        justify-content: space-between;
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            p {
+                margin: 0px;
+            }
+        }
+    }
+}
+// --<<< AREA END >>>>--
+
+// HTML - AnotherUser_Review.html ->> AREA <<-
+.AnotherUser_Review {
+    padding: 30px;
+    .First{
+        display: flex;
+        justify-content: space-between;
+        .BookInfo {
+            display : flex;
+            width: auto;
+            img {
+                width: 225px;
+            }
+            .InfoText {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 10px;
+                .Info {
+                    .Name {
+                        font-size: 3em; 
+                    }
+                    .Author {
+                        font-size: 1.5em;
+                    }
+                }
+                .Review {
+                    .Author {
+                        font-size: 1.5em;
+                    }
+                    .Oneline {
+                        font-size: 2em;
+                    }
+                }
+            }
+        }
+        .Stats {
+            width: auto;
+        }
+    }
+    .Second {
+        padding-top: 10px;
+        .Review {
+            border: 1px solid #000000;
+            padding: 10px;
+            height: 250px;
+            overflow-y: auto;
+        }
+    }
+    .Third{
+        padding: 10px 0px 10px 0px;
+        // .Comment{
+        //     display: flex;
+        //     align-items: center;
+        //     padding: 10px;
+        //     margin: 1% 0;
+        //     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        //     border-radius: 12px;
+        //     .Profile img {
+        //         @include CircleImage(60px, 60px)
+        //     }
+        //     .RightSide {
+        //         padding-left: 20px;
+        //         .Header {
+        //             display: flex;
+        //             padding-bottom: 10px;
+        //         }
+        //     }
+        //  }
+
+
+            .Comments {
+                background-color: red;
+                .test1 {
+                    border: 1px solid black;
+                    background-color: aqua;
+                }
+                .test2 {
+                    border: 1px solid black;
+                    background-color: antiquewhite;
+                }
+            }
+    }
+}

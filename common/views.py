@@ -17,7 +17,7 @@ def profile_edit(request, user_id):
             return redirect('mypage')
     else:
         profile_edit_form = ProfileEditForm(instance=profile)
-    return render(request, 'profile-edit.html', {'form': profile_edit_form})
+    return render(request, 'review/profile_update_form.html', {'form': profile_edit_form})
 
 
 def mypage(request):

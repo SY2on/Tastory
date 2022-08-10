@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="Library_View">
+    <div class="container pt-4">
+        <div class="row">
+            <div class="row justify-content-between align-items-center" style="display: flex;">
+                <div class="col-10 d-flex align-items-center w-auto">
+                    <img src="{{ LibraryData[0]['profile_image']}}" class="rounded-circle w-auto" style="width: 170px; height:170px">
+                    <div class="d-flex w-auto flex-column ps-4">
+                        <div class="fs-1 w-auto">{{ UserInfo[0]['name']}}</div>
+                        <div class="fs-5 w-auto">{{ UserInfo[0]['description']}}</div>
+                    </div>
+                </div>
+                
+                <div class="col-2 w-auto">
+                    {% if UserInfo[0]['userid'] == LibraryData[0]['host'] %}
+                        <button type="button" class="btn btn-primary">편집하기</button>
+                    {% else %}
+                        <button type="button" class="btn btn-primary">팔로우하기</button>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="flex-row justify-content-end fs-5">
+                팔로우 : {{ UserInfo[0]['follow'] }} / 팔로워 : {{ UserInfo[0]['follower'] }}
+            </div>
+        </div>
+        <hr>
+        <div class="row flex-row">
+            {% for Detail in LibraryData[0]['library'] %}
+            <div class="col-2 justify-content-centerj" style="border: 1px solid black;">
+                {{ Detail['name'] }}
+                <img class="justify-content-center" src="{{ Detail['cover_img_url'] }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

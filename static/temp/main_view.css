@@ -1,0 +1,95 @@
+.banner {
+    width: 100%;
+    height: 250px;
+    background-color: red;
+    margin-bottom: 10px;
+}
+
+.content .title {
+    font-size: 25px;
+}
+
+.BookOfMonth {
+    margin-bottom: 10px;
+}
+
+.bookcover {
+    width: 100%;
+    height: 250px;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.bookcover img {
+    float: none;
+    margin: 0 0.25%;
+    display: inline-block;
+    zoom: 1;
+    height: 200px;
+    width: 133px;
+}
+
+.showReview {
+    width: 100%;
+    height: 250px;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+
+.viewport {
+    padding: 10px;
+    white-space: normal;
+}
+
+.user_review {
+    width: 350px;
+    height: 150px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.user_review .info {
+    display: flex;
+    align-items: center;
+}
+
+.user_review .name {
+    padding-left: 10px;
+}
+.user_review img {
+    box-shadow: rgba(100, 100, 111, 0.151) 0 0 5px 4px ;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.user_review .data {
+    margin-top: 10px;
+    line-height: 21px;
+    height: calc(3*21px);
+    overflow: hidden;
+    position: relative;
+}
+
+.user_review .data::after {
+    content:  '';
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 21px;
+    width: 55%;
+
+    background: linear-gradient(
+        90deg, transparent, white
+    );
+}

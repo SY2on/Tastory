@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/row.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="User_Profile">
+    <div class="container border my-auto">
+        <div class="row">
+            <div class="col-12 d-flex flex-column align-items-center">
+                <br>
+                <div class="_images">
+                    <img 
+                        src="https://media.discordapp.net/attachments/856412895009177640/1003541751119740988/Aspect_ratio1_1_Portraitfalse_50_Heightfalse_1.png"
+                        class="rounded-circle img-fluid"
+                    >
+                </div>
+                <div class="fs-1">{{ user.username }}</div>
+                <div class="fs-5">desc</div>
+                <div class="fs-5">{{ user.email }}</div>
+            </div>
+            <div class="col-12 d-flex pt-4">
+                <div class="col-3"></div>
+                <div class="review border-end d-flex flex-column align-items-center col-1">
+                    <p>123</p>
+                    <p>리뷰한 갯수</p>
+                </div>
+                <div class="comment border-end d-flex flex-column align-items-center col-1">
+                    <p>123</p>
+                    <p>댓글단 갯수</p>
+                </div>
+                <div class="following border-end d-flex flex-column align-items-center col-1">
+                    <p>123</p>
+                    <p>팔로잉</p>
+                </div>
+                <div class="follewer border-end d-flex flex-column align-items-center col-1">
+                    <p>123</p>
+                    <p>팔로워</p>
+                </div>
+                <div class="heart border-end d-flex flex-column align-items-center col-1">
+                    <p>123</p>
+                    <p>좋아요 수</p>
+                </div>
+                <div class="bookmark d-flex flex-column align-items-center col-1">
+                    <p>123</p>
+                    <p>북마크 수</p>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="editprofile">
+                    <button type="button" class="btn btn-primary">회원정보 수정</button>
+                    <button type="button" class="btn btn-primary">비밀번호 변경</button>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}
