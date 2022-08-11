@@ -6,6 +6,7 @@ class SignupForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['nickname']
+        labels = {'nickname': '닉네임'}
 
     def signup(self, request, user):
         user.email = self.cleaned_data['email']
