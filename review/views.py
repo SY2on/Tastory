@@ -9,7 +9,7 @@ def write(request) :
         return redirect('page-read', review_id = new_review.id)
     else :
         form = ReviewForm()
-        return render(request, 'review_write.html', {'form':form} )
+        return render(request, 'review/review_form.html', {'form':form} )
 
 
 def detail(request, review_id):
