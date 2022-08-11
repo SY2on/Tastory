@@ -14,7 +14,7 @@ def write(request) :
 
 def detail(request, review_id):
     review_detail = get_object_or_404(Review, id = review_id)         
-    return render(request, 'review_detail.html', {'review_detail': review_detail})
+    return render(request, 'review/review_detail.html', {'review_detail': review_detail})
 
 
 def edit(request, review_id) :
@@ -23,7 +23,7 @@ def edit(request, review_id) :
         review.title = request.POST['title']
         review.content = request.POST['content']
         review.save()
-        return redirect('review-detail', review_id = review_id)
+        return redirect('review/review-detail', review_id = review_id)
     
     else :
         form = ReviewForm(instance=review)
