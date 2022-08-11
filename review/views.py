@@ -27,4 +27,4 @@ def edit(request, review_id) :
     
     else :
         form = ReviewForm(instance=review)
-        return render(request, 'review_edit.html', {'form':form} )
+        return render(request, 'review/review_update_form.html', {'form':form} )
