@@ -26,6 +26,6 @@ def mypage(request):
         user = User.objects.get(user_id=cur_user.user_id)
         profile = Profile.objects.get(user_id=cur_user.user_id)
         context = {'user': user, 'profile': profile}
-        return render(request, "mypage.html", context)
+        return render(request, "review/profile.html", context)
     else:
         return redirect('account_login')

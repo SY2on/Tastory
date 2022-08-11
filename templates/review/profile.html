@@ -11,12 +11,12 @@
                 <br>
                 <div class="_images">
                     <img 
-                        src="https://media.discordapp.net/attachments/856412895009177640/1003541751119740988/Aspect_ratio1_1_Portraitfalse_50_Heightfalse_1.png"
+                        src="{{ profile.profile_img }}"
                         class="rounded-circle img-fluid"
                     >
                 </div>
-                <div class="fs-1">{{ user.username }}</div>
-                <div class="fs-5">desc</div>
+                <div class="fs-1">{{ user.nickname }}</div>
+                <div class="fs-5">{{ profile.introduction }}</div>
                 <div class="fs-5">{{ user.email }}</div>
             </div>
             <div class="col-12 d-flex pt-4">
@@ -54,6 +54,7 @@
                 </div>
             </div>
             <br>
+            
         </div>
     </div>
 </div>
