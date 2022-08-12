@@ -9,17 +9,21 @@ import os
 
 
 class Book(models.Model):
+    book_id = models.BigAutoField(primary_key=True)
     title = models.CharField(max_length=50)
     img_url = models.URLField()
-    author = models.CharField(max_length=50)
     book_info = models.TextField()
+    author = models.CharField(max_length=50)
     isbn = models.CharField(max_length=10, unique=True)
     category = models.CharField(max_length=50)
-    pubdate = models.CharField(max_length=10)
-    publisher = models.TextField(max_length=50)
+    pubdate = models.DateField()
+    publisher = models.CharField(max_length=50)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        db_table = 'book'
 
 
 class Review(models.Model):
@@ -34,7 +38,8 @@ class Review(models.Model):
     user_id = models.ForeignKey(
         'common.User', on_delete=models.SET_NULL, db_column="user_id", null=True)
 
-    #book_id = models.ForeignKey("Book", related_name="book", on_delete=models.CASCADE, db_column="book_id")
+    book_id = models.ForeignKey(
+        "Book", related_name="book", on_delete=models.CASCADE, db_column="book_id")
 
     title = models.CharField(
         max_length=50, help_text="Review title", blank=False, null=False)
