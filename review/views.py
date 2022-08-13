@@ -114,11 +114,13 @@ def bookinfo(request, book_id):
         else:
             request.session['book_id'] = book_id
             user = request.user
-            if Review.objects.get(book_id=book_id, user_id=user.user_id).exists():
-                review = Review.objects.get(
-                    book_id=book_id, user_id=user.user_id)
-                return redirect('review_edit', review_id=review.review_id)
-            return redirect('review_write')
+            try:
+                if Review.objects.filter(book_id=book_id, user_id=user.user_id).exists():
+                    review = Review.objects.get(
+                        book_id=book_id, user_id=user.user_id)
+                    return redirect('review_edit', review_id=review.review_id)
+            except Review.DoesNotExist:
+                return redirect('review_write')
     else:
         user = {}
         profile = {}
