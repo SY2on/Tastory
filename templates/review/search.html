@@ -5,6 +5,7 @@
 {% endblock %}
 {% block content %}
 <div class="Search_View">
+    {% if books|length > 0 %}
     <table class="table">
         <tbody>
             {% for book in books %}
@@ -16,5 +17,9 @@
             {% endfor %}
         </tbody>
     </table>
+    {% else %}
+    <h3>검색결과가 존재하지 않습니다 :(</h3>
+    {% endif %}
+
 </div>
 {% endblock %}
