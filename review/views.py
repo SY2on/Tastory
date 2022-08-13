@@ -20,7 +20,8 @@ def write(request):
         form = ReviewForm()
         context = {
             'form': form,
-            'book': book
+            'book': book,
+            'user': user
         }
         return render(request, 'review/review_form.html', context)
 
@@ -28,7 +29,8 @@ def write(request):
 def detail(request, review_id):
     review = get_object_or_404(Review, review_id=review_id)
     book = Book.objects.get(book_id=review.book_id)
-    context = {'review': review, 'book': book}
+    user = User.objects.get(user_id=review.user_id)
+    context = {'review': review, 'book': book, 'user': user}
     return render(request, 'review/review_detail.html', context)
 
 
