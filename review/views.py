@@ -25,8 +25,10 @@ def write(request):
 
 
 def detail(request, review_id):
-    review_detail = get_object_or_404(Review, review_id=review_id)
-    return render(request, 'review/review_detail.html', {'review_detail': review_detail})
+    review = get_object_or_404(Review, review_id=review_id)
+    book = Book.objects.get(book_id=review.book_id)
+    context = {'review': review, 'book': book}
+    return render(request, 'review/review_detail.html', context)
 
 
 def edit(request, review_id):
