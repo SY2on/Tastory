@@ -17,17 +17,15 @@
     <div class="ReviewOfMonth">
         <div class="Title">이달의 리뷰</div>
         <div class="AREA_Review">
-            {% comment %} 
-            <!-- {% for Review in ReviewData %}
-                <div class="Review">
+            {% for Review in review_user_profile_list %}
+                <div class="Review" onclick="location.href='/review/{{Review.review.review_id}}/'"  style="cursor:hand">
                     <div class="UserInfo">
-                        <div class="Profile"><img src="{{Review['user_img_url']}}"></div>
-                        <div class="Name">{{Review['user_name']}}</div>
+                        <div class="Profile"><img src="{{Review.profile.profile_img.url}}"></div>
+                        <div class="Name">{{Review.user.nickname}}</div>
                     </div>
-                    <div class="Article">{{Review['data']}}</div>
+                    <div class="Article" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{Review.review.title}}</div>
                 </div>
-            {% endfor %} -->
-            {% endcomment %}
+            {% endfor %}
         </div>
     </div>
 </div>
