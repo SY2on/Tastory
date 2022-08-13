@@ -1,17 +1,26 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Review, Book
 from .forms import ReviewForm
-from django.core.paginator import Paginator
 
 
+@login_required
 def write(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
-        new_review = form.save()
+        new_review = form.save(commit=False)
+        new_review.book_id = request.session.get('book_id', 0)
+        new_review.user_id = request.user.user_id
         return redirect('review_detail', review_id=new_review.review_id)
     else:
+        book_id = request.session['book_id']
+        book = get_object_or_404(Book, book_id=book_id)
         form = ReviewForm()
-        return render(request, 'review/review_form.html', {'form': form})
+        context = {
+            'form': form,
+            'book': book
+        }
+        return render(request, 'review/review_form.html', context)
 
 
 def detail(request, review_id):
@@ -28,8 +37,13 @@ def edit(request, review_id):
         return redirect('review/review-detail', review_id=review_id)
 
     else:
+        book = Review.objects.get(book_id=review.book_id)
         form = ReviewForm(instance=review)
-        return render(request, 'review/review_update_form.html', {'form': form})
+        context = {
+            'form': form,
+            'book': book
+        }
+        return render(request, 'review/review_update_form.html', context)
 
 
 def main(request):
@@ -64,8 +78,8 @@ def bookinfo(request, book_id):
         if not request.user.is_authenticated:
             return redirect('accounts_login')
         else:
-            return redirect('review_write', book_id=book.book_id)
-    # 로그인할시 리뷰작성 페이지로 넘어가는 코드
+            request.session['book_id'] = book_id
+            return redirect('review_write')
     else:
         reviews = Review.objects.filter(book_id=book_id)
 
@@ -74,3 +88,12 @@ def bookinfo(request, book_id):
             'reviews': reviews
         }
     return render(request, 'review/book_info.html', context)
+
+
+def library(request, user_id):
+    reviews = Review.objects.filter(user_id=user_id)
+    books = []
+    for review in reviews:
+        book = Book.objects.get(book_id=review.book_id)
+        books.append(book)
+    return render(request, "review/library.html", books)
