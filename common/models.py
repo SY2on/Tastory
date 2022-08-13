@@ -38,10 +38,10 @@ class Profile(models.Model):
     introduction = models.CharField(
         max_length=100,
         help_text=("100자 이하의 자기소개. 생략 가능합니다."),
-        blank=True,
+        default="",
     )
     profile_img = models.ImageField(
-        default='default.jpg',
+        default='profile_pics/default.jpg',
         upload_to='profile_pics',
         null=True,
     )

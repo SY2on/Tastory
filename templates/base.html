@@ -22,20 +22,25 @@
     <div class="container-fluid view">
         <div class="row">
             <div class="leftsidebar media_option">
+                {% if user.is_authenticated %}
                 <div class="menu">
-                    <div class="items first">탐색</div>
-                    <div class="items">내 서재</div>
+                    <div class="items first" onclick="location.href='/'" style="cursor:hand">탐색</div>
+                    <div class="items" onclick="location.href='/library/{{user.user_id}}/'" style="cursor:hand">내 서재</div>
                     <div class="items">읽고 싶은 책</div>
                 </div>
-                {% if user.is_authenticated %}
                 <div class="user_info">
                     <div class="profile">
-                        <img src="#">
+                        <img src="{{ profile.profile_img.url }}">
                     </div>
-                    <a class="name text-decoration-none" style="color: black;" href="#">{{ user.username }}</a>
+                    <a class="name text-decoration-none" style="color: black;" href="/user/mypage/">{{ user.nickname }}</a>
                     <a class="name text-decoration-none" style="color: black;" href="{% url 'account_logout' %}">로그아웃</a>
                 </div>
                 {% else %}
+                <div class="menu">
+                    <div class="items first" onclick="location.href='/'" style="cursor:hand">탐색</div>
+                    <div class="items" onclick="location.href='/account/signup'" style="cursor:hand">내 서재</div>
+                    <div class="items">읽고 싶은 책</div>
+                </div>
                 <div class="user_info" style="width: 200px; display: flex; justify-content: center;">
                     <div class="d-flex">
                         <a class="text-decoration-none" style="color: black;" href="{% url 'account_login' %}">로그인</a>

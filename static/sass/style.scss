@@ -296,7 +296,7 @@ body {
 
     .AREA_Review {
         width: 100%;
-        height: 250px;
+        height: 130px;
         white-space: nowrap;
         position: relative;
         overflow-x: scroll;
@@ -629,4 +629,10 @@ body {
                 }
             }
     }
+}
+
+.User_Profile{
+    .Profile img {
+                @include CircleImage(400px, 400px)
+            }
 }

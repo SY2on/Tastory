@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-white bg-white test ">
-    <a class="navbar-brand logo_title media_option" href="#">테이스토리</a>
+    <a class="navbar-brand logo_title media_option" href="/">테이스토리</a>
     <div class="form-group">
-        <div class="form-group has-feedback">
-            <input type="text" class="form-control" id="inputValidation" placeholder="책 검색하기"/>
-            <span class="glyphicon glyphicon-search form-control-feedback"></span>
-        </div>
+        <form action="/search/" method="get">
+            <input type="text" name="title" required>
+            <input type="submit" value="Search">
+        </form>
     </div>
     <i class="bi bi-bell-fill"></i>
 </nav>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block css %}
-<link href="{% static 'css/row.css' %}" rel="stylesheet">
+<link href="{% static 'css/style1.css' %}" rel="stylesheet">
 {% endblock %}
 {% block content %}
 <div class="User_Profile">
@@ -9,10 +9,10 @@
         <div class="row">
             <div class="col-12 d-flex flex-column align-items-center">
                 <br>
-                <div class="_images">
+                <div class="Profile1">
                     <img 
-                        src="{{ profile.profile_img }}"
-                        class="rounded-circle img-fluid"
+                        src="{{ profile.profile_img.url }}"
+                        class="rounded-circle"
                     >
                 </div>
                 <div class="fs-1">{{ user.nickname }}</div>
@@ -49,8 +49,8 @@
             </div>
             <div class="col-12 d-flex justify-content-center">
                 <div class="editprofile">
-                    <button type="button" class="btn btn-primary">회원정보 수정</button>
-                    <button type="button" class="btn btn-primary">비밀번호 변경</button>
+                    <button type="button" class="btn btn-primary" onclick="location.href='/user/{{user.user_id}}/profile/edit'">회원정보 수정</button>
+                    <button type="button" class="btn btn-primary" disabled>비밀번호 변경</button>
                 </div>
             </div>
             <br>

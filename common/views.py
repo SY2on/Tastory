@@ -10,14 +10,22 @@ def profile_edit(request, user_id):
     user = User.objects.get(user_id=user_id)
     if request.method == 'POST':
         profile_edit_form = ProfileEditForm(request.POST, instance=profile)
+        profile_img = profile.profile_img
+        if request.FILES.get('profile_img') != None:
+            profile_img = request.FILES['profile_img']
         if profile_edit_form.is_valid:
             user.nickname = request.POST['nickname']
-            profile_edit_form.save()
+            profile = profile_edit_form.save()
+            profile.profile_img = profile_img
+            profile.save()
             user.save()
             return redirect('mypage')
     else:
         profile_edit_form = ProfileEditForm(instance=profile)
-    return render(request, 'review/profile_update_form.html', {'form': profile_edit_form})
+        context = {'form': profile_edit_form,
+                   'user': user,
+                   'profile': profile}
+    return render(request, 'review/profile_update_form.html', context)
 
 
 def mypage(request):
