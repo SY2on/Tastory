@@ -19,10 +19,12 @@ def write(request):
         book = get_object_or_404(Book, book_id=book_id)
         user = request.user
         form = ReviewForm()
+        profile = Profile.objects.get(user_id=user.user_id)
         context = {
             'form': form,
             'book': book,
-            'user': user
+            'user': user,
+            'profile': profile
         }
         return render(request, 'review/review_form.html', context)
 
@@ -31,7 +33,9 @@ def detail(request, review_id):
     review = get_object_or_404(Review, review_id=review_id)
     book = Book.objects.get(book_id=review.book_id)
     user = User.objects.get(user_id=review.user_id)
-    context = {'review': review, 'book': book, 'user': user}
+    profile = Profile.objects.get(user_id=user.user_id)
+    context = {'review': review, 'book': book,
+               'user': user, 'profile': profile}
     return render(request, 'review/review_detail.html', context)
 
 
@@ -44,22 +48,40 @@ def edit(request, review_id):
         return redirect('review/review-detail', review_id=review_id)
 
     else:
-        book = Review.objects.get(book_id=review.book_id)
+        book = Book.objects.get(book_id=review.book_id)
+        user = request.user
+        profile = Profile.objects.get(user_id=user.user_id)
         form = ReviewForm(instance=review)
         context = {
             'form': form,
-            'book': book
+            'book': book,
+            'user': user,
+            'profile': profile
         }
         return render(request, 'review/review_update_form.html', context)
 
 
 def main(request):
     books = list(Book.objects.all().values())
-    reviews = list(Review.objects.all().values())
+    reviews = Review.objects.all()
+    user = {}
+    profile = {}
+    if request.user.is_authenticated:
+        user = request.user
+        profile = Profile.objects.get(user_id=user.user_id)
+    review_user_profile_list = []
+    for review in reviews:
+        review_user = User.objects.get(user_id=review.user_id)
+        review_profile = Profile.objects.get(user_id=review_user.user_id)
+        review_user_profile_match = {
+            'review': review, 'user': review_user, 'profile': review_profile}
+        review_user_profile_list.append(review_user_profile_match)
 
     context = {
         "books": books,
-        "reviews": reviews
+        "review_user_profile_list": review_user_profile_list,
+        'user': user,
+        'profile': profile
     }
     return render(request, 'review/index.html',  context)
 
@@ -73,9 +95,13 @@ def search(request):
         qs = list(qs.filter(title__icontains=q).values())
     else:
         qs = []
+    user = request.user
+    profile = Profile.objects.get(user_id=user.user_id)
     context = {
         'books': qs,
-        'q': q
+        'q': q,
+        'user': user,
+        'profile': profile
     }
     return render(request, 'review/search.html', context)
 
@@ -84,19 +110,36 @@ def bookinfo(request, book_id):
     book = get_object_or_404(Book, book_id=book_id)
     if request.method == 'POST':
         if not request.user.is_authenticated:
-            return redirect('accounts_login')
+            return redirect('acounts/login')
         else:
             request.session['book_id'] = book_id
+            user = request.user
+            if Review.objects.get(book_id=book_id, user_id=user.user_id).exists():
+                review = Review.objects.get(
+                    book_id=book_id, user_id=user.user_id)
+                return redirect('review_edit', review_id=review.review_id)
             return redirect('review_write')
     else:
-        reviews = list(Review.objects.filter(book_id=book_id).values())
-
+        user = {}
+        profile = {}
+        if request.user.is_authenticated:
+            user = request.user
+            profile = Profile.objects.get(user_id=user.user_id)
+        reviews = Review.objects.filter(book_id=book_id)
+        review_user_profile_list = []
+        for review in reviews:
+            review_user = User.objects.get(user_id=review.user_id)
+            review_profile = Profile.objects.get(user_id=review_user.user_id)
+            review_user_profile_match = {
+                'review': review, 'user': review_user, 'profile': review_profile}
+            review_user_profile_list.append(review_user_profile_match)
         context = {
             'book': book,
-            'reviews': reviews
+            'user': user,
+            'profile': profile,
+            'review_user_profile_list': review_user_profile_list
         }
-        print(book.author)
-    return render(request, 'review/book_info.html', context)
+        return render(request, 'review/book_info.html', context)
 
 
 def library(request, user_id):
@@ -106,14 +149,11 @@ def library(request, user_id):
     review_book_list = []
     for review in reviews:
         book = Book.objects.get(book_id=review.book_id)
-        review_book_match = [review, book]
+        review_book_match = {'review': review, 'book': book}
         review_book_list.append(review_book_match)
     context = {
         'review_book_list': review_book_list,
         'user': user,
         'profile': profile
     }
-    print(user)
-    print(profile)
-    print(review_book_list)
     return render(request, "review/library.html", context)
