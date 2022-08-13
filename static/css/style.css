@@ -599,4 +599,13 @@ body {
 .AnotherUser_Review .Third .Comments .test2 {
   border: 1px solid black;
   background-color: antiquewhite;
-}/*# sourceMappingURL=style.css.map */
+}
+.Profile1 img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/*# sourceMappingURL=style.css.map */
