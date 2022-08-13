@@ -109,4 +109,7 @@ def library(request, user_id):
         'user': user,
         'profile': profile
     }
+    print(user)
+    print(profile)
+    print(review_book_list)
     return render(request, "review/library.html", context)

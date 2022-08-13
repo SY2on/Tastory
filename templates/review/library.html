@@ -1,14 +1,14 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <div class="Library_View">
     <div class="container pt-4">
         <div class="row">
             <div class="row justify-content-between align-items-center" style="display: flex;">
                 <div class="col-10 d-flex align-items-center w-auto">
-                    <img src="{{ LibraryData[0]['profile_image']}}" class="rounded-circle w-auto" style="width: 170px; height:170px">
+                    <img src="{{ profile.url }}" class="rounded-circle w-auto" style="width: 170px; height:170px">
                     <div class="d-flex w-auto flex-column ps-4">
-                        <div class="fs-1 w-auto">{{ UserInfo[0]['name']}}</div>
-                        <div class="fs-5 w-auto">{{ UserInfo[0]['description']}}</div>
+                        <div class="fs-1 w-auto">{{ user }}</div>
+                        <div class="fs-5 w-auto">{{ profile }}</div>
                     </div>
                 </div>
                 
