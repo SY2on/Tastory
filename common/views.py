@@ -22,8 +22,10 @@ def profile_edit(request, user_id):
             return redirect('mypage')
     else:
         profile_edit_form = ProfileEditForm(instance=profile)
-        profile_edit_form.nickname = user.nickname
-    return render(request, 'review/profile_update_form.html', {'form': profile_edit_form})
+        context = {'form': profile_edit_form,
+                   'user': user,
+                   'profile': profile}
+    return render(request, 'review/profile_update_form.html', context)
 
 
 def mypage(request):

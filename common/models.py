@@ -41,7 +41,7 @@ class Profile(models.Model):
         default="",
     )
     profile_img = models.ImageField(
-        default='default.jpg',
+        default='profile_pics/default.jpg',
         upload_to='profile_pics',
         null=True,
     )

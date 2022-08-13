@@ -119,6 +119,8 @@ def bookinfo(request, book_id):
                     review = Review.objects.get(
                         book_id=book_id, user_id=user.user_id)
                     return redirect('review_edit', review_id=review.review_id)
+                else:
+                    return redirect('review_write')
             except Review.DoesNotExist:
                 return redirect('review_write')
     else:
