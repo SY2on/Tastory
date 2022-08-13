@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/style1.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="Search_View">
+    {{ context }}
+</div>
+{% endblock %}

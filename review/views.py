@@ -47,29 +47,29 @@ def edit(request, review_id):
 
 
 def main(request):
-    books = Book.objects.all()
-    reviews = Review.objects.all()
+    books = list(Book.objects.all().values())
+    reviews = list(Review.objects.all().values())
 
     context = {
         "books": books,
         "reviews": reviews
     }
-    return render(request, 'review/review_update_form.html',  context)
+    return render(request, 'review/index.html',  context)
 
 
 def search(request):
-    qs = Book.objects.all()
+    qs = list(Book.objects.all().values())
 
     # GET request의 인자중에 q 값이 있으면 가져오고, 없으면 빈 문자열 넣기
     q = request.GET.get('title', '')
     if q:
-        qs = qs.filter(title__icontains=q)  # 제목에 q가 포함되어 있는 레코드만 필터링
+        qs = list(qs.filter(title__icontains=q).values())  # 제목에 q가 포함되어 있는 레코드만 필터링
 
     context = {
         'books': qs,
         'q': q
     }
-    return render(request, 'review/index.html', context)
+    return render(request, 'review/search.html', context)
 
 
 def bookinfo(request, book_id):
@@ -81,7 +81,7 @@ def bookinfo(request, book_id):
             request.session['book_id'] = book_id
             return redirect('review_write')
     else:
-        reviews = Review.objects.filter(book_id=book_id)
+        reviews = list(Review.objects.filter(book_id=book_id).values())
 
         context = {
             'book': book,
