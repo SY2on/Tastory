@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/style1.css' %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
 
 <div class="Book_Info">
     <div class="container px-0">
-        <div class="row">
+        <div class="flex-row">
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <img src="{{ book.img_url }}"
                     class="img-fluid" style="width: 200px;">
@@ -14,14 +18,19 @@
                     <div class="fs-3">{{ book.author }}</div>
                 </div>
                 <div class="row">
-                    <div class="fs-2">팀쿡씌</div>
-                    <div class="fs-4">❝아이폰을 쓰도록 합시다❞</div>
+                    <!-- <div class="fs-2">팀쿡씌</div>
+                    <div class="fs-4">❝아이폰을 쓰도록 합시다❞</div> -->
                 </div>
             </div>
             <div class="col-sm-12 col-md-2 col-lg-2">
                 <div><i class="bi bi-eye-fill"></i>&nbsp;123</div>
                 <div><i class="bi bi-heart-fill" style="color: red;"></i>&nbsp;456</div>
                 <div><i class="bi bi-bookmark-fill"></i>&nbsp;789</div>
+
+                <form action="/review/write/" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="리뷰 작성하기">
+                </form>
             </div>
         </div>
         <br>
