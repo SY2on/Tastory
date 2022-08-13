@@ -58,17 +58,17 @@ def main(request):
 
 
 def search(request):
-    qs = list(Book.objects.all().values())
+    qs = Book.objects.all().values()
 
     # GET request의 인자중에 q 값이 있으면 가져오고, 없으면 빈 문자열 넣기
-    q = request.GET.get('title', '')
+    t = request.GET.get('title', '')
     # 제목에 q가 포함되어 있는 레코드만 필터링
-    if q:
-        qs = list(qs.filter(title__icontains=q).values())
+    if t:
+        qs = list(qs.filter(title__icontains=t).values())
 
     context = {
         'books': qs,
-        'q': q
+        'q': t
     }
     return render(request, 'review/search.html', context)
 

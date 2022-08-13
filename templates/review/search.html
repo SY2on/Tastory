@@ -5,6 +5,8 @@
 {% endblock %}
 {% block content %}
 <div class="Search_View">
-    {{ context }}
+    {% for data in books %}
+        {{ data.title }}<br>
+    {% endfor %}
 </div>
 {% endblock %}
