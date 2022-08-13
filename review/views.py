@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Review, Book
+from common.models import User, Profile
 from .forms import ReviewForm
 
 
@@ -93,6 +94,8 @@ def bookinfo(request, book_id):
 
 
 def library(request, user_id):
+    user = User.objects.get(user_id=user_id)
+    profile = Profile.objects.get(user_id=user_id)
     reviews = Review.objects.filter(user_id=user_id)
     review_book_list = []
     for review in reviews:
@@ -100,6 +103,8 @@ def library(request, user_id):
         review_book_match = [review, book]
         review_book_list.append(review_book_match)
     context = {
-        'review_book_list': review_book_list
+        'review_book_list': review_book_list,
+        'user': user,
+        'profile': profile
     }
     return render(request, "review/library.html", context)
