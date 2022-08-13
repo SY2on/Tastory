@@ -5,8 +5,17 @@
 {% endblock %}
 {% block content %}
 <div class="Search_View">
-    {% for data in books %}
-        {{ data.title }}<br>
-    {% endfor %}
+    {{ books }}
+    <table class="table">
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td><img src="{{ book.img_url }}"></td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}
