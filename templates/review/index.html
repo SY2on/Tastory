@@ -10,7 +10,7 @@
         <div class="Title">이달의 책</div>
         <div class="AREA_Book">
             {% for data in books %}
-                <img src="{{ data.img_url }}">
+                <img src="{{ data.img_url }}" onclick="location.href='/book/{{data.book_id}}/'" style="cursor:hand">
             {% endfor%}
         </div>
     </div>

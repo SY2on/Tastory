@@ -5,8 +5,21 @@
 {% endblock %}
 {% block content %}
 <div class="Search_View">
-    {% for data in books %}
-        {{ data.title }}<br>
-    {% endfor %}
+    {% if books|length > 0 %}
+    <table class="table table-striped">
+        <tbody>
+            {% for book in books %}
+            <tr onclick="location.href='/book/{{book.book_id}}/'" style="cursor:hand">
+                <td><img src="{{ book.img_url }}"></td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h3>검색결과가 존재하지 않습니다 :(</h3>
+    {% endif %}
+
 </div>
 {% endblock %}
