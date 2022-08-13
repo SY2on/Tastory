@@ -88,6 +88,7 @@ def bookinfo(request, book_id):
             'book': book,
             'reviews': reviews
         }
+        print(book.author)
     return render(request, 'review/book_info.html', context)
 
 
