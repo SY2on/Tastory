@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block css %}
-<link href="{% static 'css/row.css' %}" rel="stylesheet">
+<link href="{% static 'css/style1.css' %}" rel="stylesheet">
 {% endblock %}
 {% block content %}
 <div class="Quest_View">
@@ -9,12 +9,9 @@
     <div class="BookOfMonth">
         <div class="Title">이달의 책</div>
         <div class="AREA_Book">
-            {% comment %} 
-            {% for Book in BookData %}
-                <img src="{{ Book['img_url'] }}">
-            {% endfor %}
-            {% endcomment %}
-            <img src="https://image.aladin.co.kr/product/29770/50/coversum/k882838407_1.jpg">
+            {% for data in books %}
+                <img src="{{ data.img_url }}">
+            {% endfor%}
         </div>
     </div>
     <div class="ReviewOfMonth">
