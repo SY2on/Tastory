@@ -8,5 +8,5 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('search/', views.search, name='book_search'),
     path('book/<int:book_id>/', views.bookinfo, name='book_detail'),
-    #path('library/<int:user_id>/', views.library, name='library')
+    path('library/<int:user_id>/', views.library, name='library')
 ]
