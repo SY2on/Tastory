@@ -9,9 +9,10 @@ from .forms import ReviewForm
 def write(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
-        new_review = form.save(commit=False)
-        new_review.book_id = request.session.get('book_id', 0)
-        new_review.user_id = request.user.user_id
+        book_id = request.session.get('book_id', 0)
+        book = Book.objects.get(book_id=book_id)
+        user = request.user
+        new_review = form.save(user=user, book=book)
         return redirect('review_detail', review_id=new_review.review_id)
     else:
         book_id = request.session['book_id']

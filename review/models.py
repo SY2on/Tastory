@@ -35,10 +35,10 @@ class Review(models.Model):
     )
     review_id = models.BigAutoField(primary_key=True)
 
-    user_id = models.ForeignKey(
+    user = models.ForeignKey(
         'common.User', on_delete=models.SET_NULL, db_column="user_id", null=True)
 
-    book_id = models.ForeignKey(
+    book = models.ForeignKey(
         "Book", related_name="book", on_delete=models.CASCADE, db_column="book_id")
 
     title = models.CharField(
