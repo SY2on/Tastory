@@ -5,14 +5,13 @@
 {% endblock %}
 {% block content %}
 <div class="Search_View">
-    {{ books }}
     <table class="table">
         <tbody>
             {% for book in books %}
             <tr>
                 <td><img src="{{ book.img_url }}"></td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
             </tr>
             {% endfor %}
         </tbody>
