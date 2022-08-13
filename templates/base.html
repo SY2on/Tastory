@@ -32,7 +32,7 @@
                     <div class="profile">
                         <img src="{{ profile.profile_img.url }}">
                     </div>
-                    <a class="name text-decoration-none" style="color: black;" href="/user/mypage/">{{ user.username }}</a>
+                    <a class="name text-decoration-none" style="color: black;" href="/user/mypage/">{{ user.nickname }}</a>
                     <a class="name text-decoration-none" style="color: black;" href="{% url 'account_logout' %}">로그아웃</a>
                 </div>
                 {% else %}
